@@ -101,14 +101,35 @@
         </div>
 
         <h4 class="center-align" style="font-family: 'Chewy', cursive; color: #3E2723; margin-top: 50px; margin-bottom: 30px;">Visualizing the Process</h4>
-        <div class="row">
-          <div class="col s12 m6 center-align">
-            <img src="/assets/img/InProgressLevelBlockout.png" alt="Level Blockout in Unreal Engine" class="responsive-img hoverable materialboxed" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
-            <p style="font-size: 1rem; color: #D35400; font-style: italic; margin-top: 15px; font-weight: 500;">Early level blockout implemented in Unreal Engine 5</p>
+        
+        <div class="row" style="margin-bottom: 40px;">
+          <div class="col s12">
+            <div style="background-color: #FDFBF7; padding: 25px; border-radius: 8px; border-left: 5px solid #D35400; box-shadow: 0 4px 8px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+              <div style="flex: 1; min-width: 300px;">
+                <h5 style="color: #D35400; font-weight: bold; margin-top: 0;"><i class="fa fa-file-pdf-o"></i> Comprehensive Game Design Document</h5>
+                <p class="project-text" style="margin-bottom: 0;">I authored the complete GDD to align our team. It details our target audience analysis for a slow, exploratory platformer, mechanic breakdowns like the Acorn Platform Creation, and risk assessments for core game loop features to ensure strict scoping.</p>
+              </div>
+              <div>
+                <a href="/assets/docs/A Squirrelly Story Game Design Document.pdf" target="_blank" class="hoverable" style="display: inline-block; font-size: 1.1rem; font-weight: bold; color: white; background-color: #D35400; padding: 10px 25px; border-radius: 30px; text-decoration: none;">View Full GDD PDF</a>
+              </div>
+            </div>
           </div>
-          <div class="col s12 m6 center-align">
-            <img src="/assets/img/TrinketUI.png" alt="Trinkets UI Design" class="responsive-img hoverable materialboxed" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
-            <p style="font-size: 1rem; color: #D35400; font-style: italic; margin-top: 15px; font-weight: 500;">Trinkets UI designed to provide rewarding visual feedback</p>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m4 center-align">
+            <h6 style="font-weight: bold; color: #3E2723; margin-bottom: 15px;">Early Blockout</h6>
+            <img src="/assets/img/InProgressLevelBlockout.jpg" alt="Level Blockout in Unreal Engine" class="responsive-img hoverable materialboxed" data-caption="Early level blockout implemented in Unreal Engine 5. Notice the structural focus before the art pass." style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+          </div>
+          
+          <div class="col s12 m4 center-align">
+            <h6 style="font-weight: bold; color: #3E2723; margin-bottom: 15px;">Final Level Evolution</h6>
+            <img src="/assets/img/SquirrelyLevel.gif" alt="Final Level Design" class="responsive-img hoverable materialboxed" data-caption="The final level after incorporating environmental art, proving out the initial greybox design." style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); border: 1px solid #ccc;">
+          </div>
+
+          <div class="col s12 m4 center-align">
+            <h6 style="font-weight: bold; color: #3E2723; margin-bottom: 15px;">Trinkets UI</h6>
+            <img src="/assets/img/TrinketUI.jpg" alt="Trinkets UI Design" class="responsive-img hoverable materialboxed" data-caption="Trinkets UI designed to provide rewarding visual feedback upon recovering items." style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
           </div>
         </div>
 
@@ -156,5 +177,12 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  
+  <script>
+    // Initialize Materialbox explicitly just to ensure captions bind properly
+    $(document).ready(function(){
+      $('.materialboxed').materialbox();
+    });
+  </script>
 </body>
 </html>
