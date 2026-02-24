@@ -15,7 +15,8 @@
     main { padding-left: 0 !important; }
     body { background-color: #FDFBF7; font-family: 'Roboto', sans-serif; color: #3E2723; }
     .navbar-section, .navbar-section .row { margin: 0; padding: 0; border: none; }
-    .nav-link { color: #fff; margin: 0 0px; font-weight: 500; text-decoration: none; transition: color 0.3s ease; }
+    /* Updated nav-link for a sleeker, more professional look */
+    .nav-link { color: #3E2723; margin: 0 0px; font-weight: 700; text-decoration: none; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;}
     .nav-link:hover { color: #D35400; }
     p.project-text { font-size: 1.15rem; line-height: 1.8; text-align: left; }
     .quick-facts { background-color: #E8E3D9; padding: 20px 0; border-bottom: 2px solid #D35400; }
@@ -27,17 +28,17 @@
 
 <body>
   <main>
-    <div class="navbar-section" style="background-color: #3E2723; border-bottom: 3px solid #D35400;">
+    <div class="navbar-section" style="background-color: #FDFBF7; padding: 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100;">
       <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
         <div style="flex: 1; padding-left: 20px;">
-          <a href="index.html"><img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px; border-radius: 4px;"></a>
+          <a href="index.html"><img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
         </div>
-        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px;">
-          <a href="index.html#projects" class="nav-link" style="font-weight: bold; color: #D35400;">&larr; Back to Portfolio</a>
+        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center;">
+          <a href="index.html#projects" class="nav-link"><i class="fa fa-chevron-left" style="font-size: 0.8rem;"></i> Back to Portfolio</a>
         </div>
         <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
           <a href="https://youtube.com/SuperGamingCo" target="_blank">
-            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 45px; margin-top: 5px;">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 35px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
           </a>
         </div>
       </div>
@@ -146,43 +147,4 @@
     </section>
 
     <section class="section" style="padding: 60px 0; background-color: #E8E3D9; border-top: 2px dashed #D35400;">
-      <div class="container">
-        <div class="row valign-wrapper" style="flex-wrap: wrap; justify-content: center;">
-          <div class="col s4 m3 center-align">
-            <img src="/assets/img/WBP_AcornCount1.PNG" alt="Acorn Graphic Left" class="responsive-img" style="max-width: 120px; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));">
-          </div>
-
-          <div class="col s12 m6 center-align" style="padding: 20px;">
-            <h5 style="color: #3E2723; line-height: 1.5; font-weight: bold;">Want to track down the Lichen Staff?</h5>
-            <a href="https://heyimzatchari.itch.io/a-squirrely-story" target="_blank" class="hoverable" style="display: inline-block; margin-top: 15px; font-size: 1.3rem; font-weight: bold; color: white; background-color: #E67E22; padding: 12px 40px; border-radius: 30px; text-decoration: none; border: 2px solid #D35400;">Play on Itch.io</a>
-          </div>
-
-          <div class="col s4 m3 center-align">
-             <img src="/assets/img/WBP_AcornCount.PNG" alt="Acorn Graphic Right" class="responsive-img" style="max-width: 120px; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="background-color: #3E2723; padding: 60px 0; text-align: center; border-top: 5px solid #D35400;">
-      <h4 class="white-text" style="font-weight: bold; margin-bottom: 30px; font-family: 'Chewy', cursive; letter-spacing: 1px;">Get In Touch</h4>
-      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 950px;">
-        <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #D35400; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fa fa-envelope"></i> steveneb0212@gmail.com</a>
-        <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #272727; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fa fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #0077b5; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fa fa-linkedin"></i> LinkedIn</a>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-  
-  <script>
-    // Initialize Materialbox explicitly just to ensure captions bind properly
-    $(document).ready(function(){
-      $('.materialboxed').materialbox();
-    });
-  </script>
-</body>
-</html>
+      <div class="
