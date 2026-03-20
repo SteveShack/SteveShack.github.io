@@ -2,96 +2,162 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TD FPS: Poly Defense | Steven Bruns</title>
-  
+
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
     main { padding-left: 0 !important; }
+    body { background-color: #f4f6f7; font-family: 'Roboto', sans-serif; color: #2c3e50; }
     .navbar-section, .navbar-section .row { margin: 0; padding: 0; border: none; }
-    .nav-link { color: #fff; margin: 0 0px; font-weight: 400; text-decoration: none; }
-    .nav-link:hover { color: #2980b9; }
-    p.project-text { font-size: 1.2rem; line-height: 1.8; color: #333; }
+    .nav-link { color: #fff; margin: 0 0px; font-weight: 700; text-decoration: none; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;}
+    .nav-link:hover { color: #e67e22; }
+    p.project-text { font-size: 1.15rem; line-height: 1.8; text-align: left; }
+    .quick-facts { background-color: #ecf0f1; padding: 20px 0; border-bottom: 2px solid #2980b9; }
+    .fact-title { font-weight: 700; color: #2980b9; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    .fact-detail { font-weight: 500; font-size: 1.1rem; color: #2c3e50; }
+    .contribution-header { color: #2980b9; font-weight: bold; margin-bottom: 15px; font-family: 'Orbitron', sans-serif; }
+    .accent-bg { background-color: #1a252f; color: white; }
+    .highlight-text { color: #e67e22; font-weight: bold; }
   </style>
 </head>
 
-<body style="background-color: #f9f9f9;">
+<body>
   <main>
-    <div class="navbar-section" style="background-color: #1a252f; border-bottom: 3px solid #2980b9;">
+    <div class="navbar-section" style="background-color: #1a252f; padding: 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #2980b9;">
       <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
-        <div style="flex: 1; padding-left: 20px;">
-          <a href="index.html"><img src="assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px;"></a>
+        <div style="flex: 1; padding-left: 20px; display: flex; align-items: center;">
+          <a href="index.html" style="display: flex;"><img src="assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
         </div>
-        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px;">
-          <a href="index.html#projects" class="nav-link" style="font-weight: bold; color: #2980b9;">&larr; Back to Portfolio</a>
+        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; align-items: center;">
+          <a href="index.html#projects" class="nav-link"><i class="fa fa-chevron-left" style="font-size: 0.8rem;"></i> Back to Portfolio</a>
         </div>
-        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
-          <a href="https://youtube.com/SuperGamingCo" target="_blank">
-            <img src="assets/img/Youtube.png" alt="Youtube" style="height: 45px; margin-top: 5px;">
+        <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; padding-right: 20px;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex;">
+            <img src="assets/img/Youtube.png" alt="Youtube" style="height: 35px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
           </a>
         </div>
       </div>
     </div>
 
-    <section class="section" style="background-color: #2c3e50; padding: 100px 0; text-align: center;">
+    <section class="section accent-bg" style="padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: relative; z-index: 2;">
+            <h1 style="font-family: 'Orbitron', sans-serif; font-size: 4.5rem; letter-spacing: 3px; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">TD FPS: Poly Defense</h1>
+            <p style="color: #bdc3c7; font-size: 1.5rem; font-style: italic; margin-top: 10px;">First-Person Tower Defense Hybrid</p>
+            <span style="background-color: #e67e22; color: white; padding: 6px 18px; border-radius: 4px; font-weight: bold; letter-spacing: 1.5px; margin-top: 25px; display: inline-block; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">IN ACTIVE DEVELOPMENT</span>
+        </div>
+    </section>
+
+    <div class="quick-facts center-align">
       <div class="container">
-        <h1 class="white-text" style="font-family: 'Orbitron', sans-serif; font-size: 4rem; margin: 0; letter-spacing: 3px; text-transform: uppercase;">TD FPS: Poly Defense</h1>
-        <span style="background-color: #e67e22; color: white; padding: 5px 15px; border-radius: 4px; font-weight: bold; letter-spacing: 1px; margin-top: 20px; display: inline-block;">IN ACTIVE DEVELOPMENT</span>
+        <div class="row" style="margin-bottom: 0;">
+          <div class="col s6 m4 l2"><span class="fact-title">Role</span><br><span class="fact-detail">Solo Developer</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Team Size</span><br><span class="fact-detail">1 (Just Me!)</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Engine</span><br><span class="fact-detail">Unreal Engine 5</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Genre</span><br><span class="fact-detail">FPS / Tower Defense</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Platform</span><br><span class="fact-detail">PC</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Status</span><br><span class="fact-detail">In Progress (2026)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="padding: 60px 0; background-color: #f4f6f7;">
+      <div class="container">
+        <div class="row valign-wrapper" style="flex-wrap: wrap;">
+          <div class="col s12 m5 center-align" style="padding: 0 20px;">
+            <div style="background-color: #e0e0e0; height: 300px; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 12px rgba(0,0,0,0.1); border: 2px dashed #bdc3c7;">
+                <span style="color: #7f8c8d; font-weight: bold;">[Insert Hero Game Image/GIF Here]</span>
+            </div>
+            <p style="font-size: 1rem; color: #2980b9; font-style: italic; margin-top: 20px; font-weight: 500;">"Balancing base defense with fast-paced gunplay."</p>
+          </div>
+          <div class="col s12 m7">
+            <h4 style="font-family: 'Orbitron', sans-serif; color: #1a252f; font-weight: 700;">Protect the Core. Survive the Waves.</h4>
+            <p class="project-text">
+              TD FPS is an ambitious solo project combining the strategic planning of Tower Defense with the visceral action of a First-Person Shooter. Set in a Sci-Fi universe involving dimensional travel, players must secure resources against relentless waves of enemies. 
+            </p>
+            <p class="project-text">
+              This project serves as a comprehensive playground for me to hone my skills across the board in Unreal Engine 5—from designing intricate AI behaviors using Blackboards and Behavior Trees, to managing complex game loops, economy balancing, and dynamic tower upgrades.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" style="padding: 60px 0; background-color: #ffffff;">
-      <div class="container center-align">
-        <p class="project-text" style="max-width: 800px; margin: 0 auto;">
-          This project is still in active development! I will be updating this page with any big updates. In the meantime, here is my latest milestone update, and a document I made when originally making the game!
-        </p>
-      </div>
-    </section>
-
-    <section class="section" style="padding: 40px 0 80px 0; background-color: #ffffff;">
+    <section class="section" style="padding: 60px 0; background-color: #ffffff; border-top: 1px solid #ecf0f1; border-bottom: 1px solid #ecf0f1;">
       <div class="container">
+        <h3 class="center-align" style="font-family: 'Orbitron', sans-serif; color: #1a252f; margin-bottom: 40px; font-weight: 700;">Current Development Focus</h3>
+        
         <div class="row">
-          
           <div class="col s12 m6">
-            <h5 style="color: #2c3e50; font-weight: bold; text-align: center; margin-bottom: 20px;">Latest Milestone</h5>
-            <div class="video-container hoverable" style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">        
-              <iframe width="853" height="480" src="https://drive.google.com/file/d/1saRUA56HoqFWMbi4z6LKi0F7pSo7UoIP/preview" frameborder="0" allowfullscreen></iframe>
-              
+            <div style="background-color: #f8f9fa; padding: 30px; border-radius: 8px; height: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border-left: 4px solid #2980b9;">
+              <h5 class="contribution-header"><i class="fa fa-cogs"></i> The "Defense Loop"</h5>
+              <p class="project-text">I am currently refining the core gameplay loop to ensure both the FPS and TD elements feel equally important. I recently implemented a system where towers are breakable by enemies, forcing the player to actively manage their defenses by repairing them with a hammer mid-combat. This creates a tense, dynamic battlefield where enemies calculate whether to target the player or the strategic towers.</p>
             </div>
           </div>
-
           <div class="col s12 m6">
-            <h5 style="color: #2c3e50; font-weight: bold; text-align: center; margin-bottom: 20px;">Original Concept Doc</h5>
-            <div class="card hoverable" style="border-top: 4px solid #2980b9; height: 100%; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #f4f6f7;">
+            <div style="background-color: #f8f9fa; padding: 30px; border-radius: 8px; height: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border-left: 4px solid #e67e22;">
+              <h5 class="contribution-header" style="color: #e67e22;"><i class="fa fa-sitemap"></i> AI & Systems Design</h5>
+              <p class="project-text">A major focus has been creating intelligent enemy AI using Unreal's Blackboards and Behavior Trees, allowing enemies to make dynamic targeting decisions. I've also completed a full 3-level upgrade path for the core tower types (Archer, Wizard, Cannon), and am working on refining gunplay feedback, including headshot mechanics and clear player/tower health indicators.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 60px 0; background-color: #f4f6f7;">
+      <div class="container">
+        <h4 class="center-align" style="font-family: 'Orbitron', sans-serif; color: #1a252f; margin-bottom: 40px; font-weight: 700;">Milestones & Documentation</h4>
+        
+        <div class="row">
+          <div class="col s12 m7">
+            <h6 style="color: #2c3e50; font-weight: bold; margin-bottom: 15px;">Latest Video Update</h6>
+            <div class="video-container hoverable" style="border-radius: 8px; overflow: hidden; box-shadow: 0 6px 12px rgba(0,0,0,0.15); border: 2px solid #bdc3c7;">        
+              <iframe width="853" height="480" src="https://drive.google.com/file/d/1saRUA56HoqFWMbi4z6LKi0F7pSo7UoIP/preview" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p style="font-size: 0.9rem; color: #7f8c8d; margin-top: 10px; font-style: italic;">Showcasing the latest iterations of the defense loop and AI behavior.</p>
+          </div>
+
+          <div class="col s12 m5">
+            <h6 style="color: #2c3e50; font-weight: bold; margin-bottom: 15px;">Original Concept Doc</h6>
+            <div class="card hoverable" style="border-top: 5px solid #2980b9; height: calc(100% - 40px); display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #ffffff; border-radius: 0 0 8px 8px;">
               
-              <div style="text-align: center; padding: 20px;">
-                <i class="fa fa-file-text-o" style="font-size: 4rem; color: #2c3e50; margin-bottom: 20px;"></i>
-                <h5 style="margin: 0; font-weight: 300; color: #555;">Advanced Seminar Doc</h5>
-                <p style="color: #888; margin-top: 5px; font-size: 0.9rem;">PDF Format</p>
+              <div style="text-align: center; padding: 30px 20px;">
+                <i class="fa fa-file-pdf-o" style="font-size: 4.5rem; color: #2980b9; margin-bottom: 20px;"></i>
+                <h5 style="margin: 0; font-weight: bold; color: #2c3e50;">Advanced Seminar Doc</h5>
+                <p style="color: #7f8c8d; margin-top: 10px; font-size: 1rem; line-height: 1.5;">The original foundational design document outlining the mechanics, scope, and vision for the game.</p>
                 
-                <a href="assets/img/TD FPS_ Poly Defense.pdf" target="_blank" class="waves-effect waves-light btn-large" style="background-color: #2980b9; margin-top: 30px; border-radius: 30px; font-weight: bold;">
-                  <i class="fa fa-download left"></i> Download / View
+                <a href="assets/img/TD FPS_ Poly Defense.pdf" target="_blank" class="hoverable" style="display: inline-block; margin-top: 25px; font-size: 1.1rem; font-weight: bold; color: white; background-color: #2980b9; padding: 12px 30px; border-radius: 30px; text-decoration: none; transition: background-color 0.3s ease;">
+                  <i class="fa fa-download" style="margin-right: 8px;"></i> View PDF
                 </a>
               </div>
 
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
 
-    <section class="section" style="background-color: #1a252f; padding: 60px 0; text-align: center;">
-      <h4 class="white-text" style="font-weight: bold; margin-bottom: 20px;">Get In Touch</h4>
+    <section class="section accent-bg" style="padding: 40px 0; text-align: center; border-top: 3px solid #e67e22;">
+      <div class="container">
+        <h5 style="font-family: 'Orbitron', sans-serif; margin-bottom: 15px;">What's Next?</h5>
+        <p style="font-size: 1.1rem; color: #bdc3c7; max-width: 600px; margin: 0 auto;">
+          Future updates will focus on introducing new enemy variants (including flying units!), balancing the in-game economy, and making the environments more dynamic. Check back soon for more updates!
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: #111820; padding: 60px 0; text-align: center;">
+      <h4 class="white-text" style="font-weight: bold; margin-bottom: 30px; font-family: 'Orbitron', sans-serif; letter-spacing: 1px;">Get In Touch</h4>
       <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 950px;">
-        <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #2980b9; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold; text-decoration: none;"><i class="fa fa-envelope"></i> steveneb0212@gmail.com</a>
-        <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #333; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold; text-decoration: none;"><i class="fa fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #0077b5; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold; text-decoration: none;"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #2980b9; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fa fa-envelope"></i> steveneb0212@gmail.com</a>
+        <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #2c3e50; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fa fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #0077b5; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fa fa-linkedin"></i> LinkedIn</a>
       </div>
     </section>
 
@@ -99,5 +165,12 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  
+  <script>
+    // Initialize Materialbox explicitly just to ensure captions bind properly
+    $(document).ready(function(){
+      $('.materialboxed').materialbox();
+    });
+  </script>
 </body>
 </html>
