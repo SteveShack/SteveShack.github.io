@@ -24,12 +24,6 @@
     .contribution-header { color: #2980b9; font-weight: bold; margin-bottom: 15px; font-family: 'Orbitron', sans-serif; }
     .accent-bg { background-color: #1a252f; color: white; }
     .highlight-text { color: #e67e22; font-weight: bold; }
-    
-    /* New Custom List Styling */
-    .custom-list { list-style: none; padding-left: 0; margin-top: 15px; }
-    .custom-list li { margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: flex-start; gap: 10px; }
-    .custom-list i { color: #2980b9; margin-top: 5px; }
-    .custom-list.orange-bullets i { color: #e67e22; }
   </style>
 </head>
 
@@ -67,23 +61,14 @@
 
     <div class="quick-facts center-align">
       <div class="container">
-        <div class="row" style="margin-bottom: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
-          <div style="flex: 1; min-width: 150px; max-width: 200px;"><span class="fact-title">Role</span><br><span class="fact-detail">Solo Developer</span></div>
-          <div style="flex: 1; min-width: 150px; max-width: 200px;"><span class="fact-title">Engine</span><br><span class="fact-detail">Unreal Engine 5</span></div>
-          <div style="flex: 1; min-width: 150px; max-width: 200px;"><span class="fact-title">Genre</span><br><span class="fact-detail">FPS / Tower Defense</span></div>
-          <div style="flex: 1; min-width: 150px; max-width: 200px;"><span class="fact-title">Platform</span><br><span class="fact-detail">PC</span></div>
-          <div style="flex: 1; min-width: 150px; max-width: 200px;"><span class="fact-title">Status</span><br><span class="fact-detail">In Progress (2026)</span></div>
+        <div class="row" style="margin-bottom: 0;">
+          <div class="col s6 m4 l2 offset-l1"><span class="fact-title">Role</span><br><span class="fact-detail">Solo Developer</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Engine</span><br><span class="fact-detail">Unreal Engine 5</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Genre</span><br><span class="fact-detail">FPS / Tower Defense</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Platform</span><br><span class="fact-detail">PC</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Status</span><br><span class="fact-detail">In Progress (2026)</span></div>
         </div>
       </div>
-    </div>
-
-    <div style="background-color: #2c3e50; padding: 15px 0; text-align: center; border-bottom: 1px solid #1a252f;">
-        <span style="color: #bdc3c7; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
-            <span><i class="fa fa-check-circle" style="color: #2980b9;"></i> Blueprints</span>
-            <span><i class="fa fa-check-circle" style="color: #2980b9;"></i> Behavior Trees</span>
-            <span><i class="fa fa-check-circle" style="color: #2980b9;"></i> AI Perception</span>
-            <span><i class="fa fa-check-circle" style="color: #2980b9;"></i> Economy Balancing</span>
-        </span>
     </div>
 
     <section class="section" style="padding: 45px 0; background-color: #f4f6f7;">
@@ -101,7 +86,7 @@
                   Poly Defense is an ambitious solo project combining the strategic planning of Tower Defense with the engaging action of a First-Person Shooter. Set in a Sci-Fi universe involving dimensional travel, players must secure giant Cores while surviving against relentless waves of enemies. 
                 </p>
                 <p class="project-text" style="margin-bottom: 0;">
-                  This project has allowed me to dig deep into <strong>Unreal Engine 5</strong> to further my skills with creating games in various engines. From designing intricate AI behaviors using <strong>Blackboards and Behavior Trees</strong>, to managing complex game loops, economy balancing, and dynamic tower upgrades, I am building every system from the ground up.
+                  This project serves as my ultimate playground for mastering Unreal Engine 5. From engineering complex AI behaviors to balancing resource economies and hybrid game loops, I am building every system entirely from scratch to push the boundaries of my technical design capabilities.
                 </p>
             </div>
         </div>
@@ -131,29 +116,19 @@
     <section class="section" style="padding: 45px 0; background-color: #ffffff; border-top: 1px solid #ecf0f1; border-bottom: 1px solid #ecf0f1;">
       <div class="container">
         
-        <h3 class="center-align" style="font-family: 'Orbitron', sans-serif; color: #1a252f; margin-bottom: 30px; font-weight: 700; margin-top: 0;">Current Development Focus</h3>
+        <h3 class="center-align" style="font-family: 'Orbitron', sans-serif; color: #1a252f; margin-bottom: 30px; font-weight: 700; margin-top: 0;">Development & Key Learnings</h3>
         
         <div class="row" style="margin-bottom: 0;">
           <div class="col s12 m6">
             <div style="background-color: #f8f9fa; padding: 30px; border-radius: 8px; height: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border-left: 4px solid #2980b9;">
-              <h5 class="contribution-header"><i class="fa fa-cogs"></i> The "Defense Loop"</h5>
-              <p class="project-text">I am currently refining the core gameplay loop to ensure both the FPS and TD elements feel equally important. Key features include:</p>
-              <ul class="custom-list">
-                  <li><i class="fa fa-wrench"></i> <strong>Breakable Towers:</strong> Forcing players to actively manage defenses.</li>
-                  <li><i class="fa fa-gavel"></i> <strong>Repair Mechanics:</strong> Using a hammer mid-combat or between waves.</li>
-                  <li><i class="fa fa-random"></i> <strong>Dynamic Battlefield:</strong> Enemies calculate whether to target the player or the towers.</li>
-              </ul>
+              <h5 class="contribution-header"><i class="fa fa-cogs"></i> Balancing Hybrid Loops</h5>
+              <p class="project-text" style="margin-bottom: 0;">Creating a hybrid genre meant tackling the challenge of two competing gameplay loops. I had to ensure the FPS mechanics felt engaging without making the Tower Defense strategy irrelevant. By implementing breakable towers and a mid-combat repair system, I learned how to successfully bridge these genres—forcing the player to constantly shift their attention between active shooting and strategic base maintenance.</p>
             </div>
           </div>
           <div class="col s12 m6">
             <div style="background-color: #f8f9fa; padding: 30px; border-radius: 8px; height: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border-left: 4px solid #e67e22;">
-              <h5 class="contribution-header" style="color: #e67e22;"><i class="fa fa-sitemap"></i> AI & Systems Design</h5>
-              <p class="project-text">A majority of my time has gone into creating intelligent enemy AI and robust upgrade systems:</p>
-              <ul class="custom-list orange-bullets">
-                  <li><i class="fa fa-microchip"></i> <strong>Intelligent AI:</strong> Utilizing Unreal's Blackboards and Behavior Trees for dynamic targeting decisions.</li>
-                  <li><i class="fa fa-level-up"></i> <strong>Upgrade Paths:</strong> Fully implemented 3-level upgrades for Archer, Wizard, and Cannon towers.</li>
-                  <li><i class="fa fa-crosshairs"></i> <strong>Gunplay Feedback:</strong> Refining headshot mechanics and clear health indicators.</li>
-              </ul>
+              <h5 class="contribution-header" style="color: #e67e22;"><i class="fa fa-sitemap"></i> AI & System Architecture</h5>
+              <p class="project-text" style="margin-bottom: 0;">My primary technical goal was building scalable, robust systems in Unreal Engine 5. I dove into Unreal's Blackboards and Behavior Trees to engineer enemy AI capable of dynamically calculating whether to target the player or sabotage towers. Additionally, establishing a full 3-level upgrade path for multiple tower classes taught me invaluable lessons in data management, component inheritance, and iterative economy balancing.</p>
             </div>
           </div>
         </div>
