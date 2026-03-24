@@ -108,7 +108,7 @@
                   Poly Defense is an ambitious solo project combining the strategic planning of Tower Defense with the engaging action of a First-Person Shooter. Set in a Sci-Fi universe involving dimensional travel, players must secure giant Cores while surviving against relentless waves of enemies. 
                 </p>
                 <p class="project-text center-align" style="margin-bottom: 0;">
-                  This project serves as my ultimate playground for mastering Unreal Engine 5. From engineering complex AI behaviors to balancing resource economies and hybrid game loops, I am building every system entirely from scratch to push the boundaries of my technical design capabilities.
+                  This project was created using Unreal Engine 5 as a way to learn the engine, and create systems that I had not worked with before. From engineering complex AI behaviors to balancing resource economies and hybrid game loops, I am building every system entirely from scratch to challenge myself to learn how to create complex systems while creating an engaging experience.
                 </p>
             </div>
         </div>
@@ -153,10 +153,10 @@
               <p class="project-text" style="margin-top: 5px;">Enemies navigating a complex TD environment were getting stuck on walls using standard navmesh seeking. When moved to strict spline-based pathing, they felt too robotic, and applying damage on event tick made combat feel unfair.</p>
               
               <span class="hud-label">Solution & Reasoning</span>
-              <p class="project-text" style="margin-top: 5px;">Engineered a hybrid navigation system. Splines handle macro-navigation toward the core, while a custom Blackboard and Behavior Tree allow enemies to dynamically break from the spline to engage the player. Tying damage to attack animations rather than event ticks made combat readable and fair.</p>
+              <p class="project-text" style="margin-top: 5px;">Engineered a hybrid navigation system. Splines handle navigation toward the Core, while a custom Blackboard and Behavior Tree allow enemies to break free from the spline to attack the player. Tying damage to attack animations rather than event ticks made combat more readable and fair.</p>
               
               <span class="hud-label" style="color: #F59E0B;">What I Learned</span>
-              <p class="project-text" style="margin-top: 5px; margin-bottom: 0;">Iteration is crucial for game feel. Solving a technical pathing issue with splines created a design issue (robotic movement), which then required a behavioral solution to make the enemies feel alive and fun to fight.</p>
+              <p class="project-text" style="margin-top: 5px; margin-bottom: 0;">Iteration is crucial for game feel. Solving a technical pathing issue with splines created a design issue (robotic movement), which then required a behavioral solution to make the enemies feel alive and more engaging to fight.</p>
             </div>
           </div>
         </div>
@@ -173,7 +173,7 @@
               <p class="project-text" style="margin-top: 5px;">Designed a parent-child class hierarchy. The parent handles core placement logic (valid/invalid zones) and basic targeting. Child classes uniquely handle projectile logic (destroying arrows, multi-hit zaps). This allows for rapid prototyping and seamless addition of new towers without rebuilding foundational systems.</p>
               
               <span class="hud-label" style="color: #F59E0B;">What I Learned</span>
-              <p class="project-text" style="margin-top: 5px; margin-bottom: 0;">Building a highly modular foundation early on saves countless hours during the balancing phase, allowing the focus to remain on how projectiles feel rather than how the tower detects enemies.</p>
+              <p class="project-text" style="margin-top: 5px; margin-bottom: 0;">Building a highly modular foundation early on has saved me countless hours when balancing, allowing me to focus on how projectiles feel rather than how the tower detects enemies.</p>
             </div>
           </div>
           
@@ -195,10 +195,10 @@
               <p class="project-text" style="margin-top: 5px;">The dual-nature of a TD/FPS requires fast access to building tools and weapons. Initial UI designs (split left/right screens) were visually cluttered and ineffective during fast-paced gameplay.</p>
               
               <span class="hud-label">Solution & Reasoning</span>
-              <p class="project-text" style="margin-top: 5px;">Consolidated the UI into a unified bottom-screen tab system. (Currently prototyping a radial wheel menu). Screen real estate is premium in an FPS; centralizing the build menu reduces eye-travel, keeping the player focused on the action while accessing tactical options.</p>
+              <p class="project-text" style="margin-top: 5px;">Consolidated the UI into a unified tab at the bottom of the screen. (Currently prototyping a radial wheel menu). Screen real estate is premium in an FPS; centralizing the build menu reduces eye-travel, keeping the player focused on the action while accessing tactical options.</p>
               
               <span class="hud-label" style="color: #F59E0B;">What I Learned</span>
-              <p class="project-text" style="margin-top: 5px; margin-bottom: 0;">UI in a hybrid game cannot just be a port of standard genre UI; it must be custom-built to serve the immediate pacing and cognitive load of the game.</p>
+              <p class="project-text" style="margin-top: 5px; margin-bottom: 0;">UI in a hybrid game has to be effective for both of the genres without conflicting each other. It must work with the interactions in the game rather than detract from one to improve another.</p>
             </div>
           </div>
         </div>
