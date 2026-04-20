@@ -2,143 +2,212 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chop-Off | Steven Bruns</title>
+  
+  <link rel="icon" type="image/png" href="/assets/img/App Icon.png" />
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
   
-  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Rye&display=swap" rel="stylesheet">
   
   <style>
     main { padding-left: 0 !important; }
+    
+    /* Earthy/Lumberjack Theme */
+    body { background-color: #f4eadd; font-family: 'Roboto', sans-serif; color: #333; }
     .navbar-section, .navbar-section .row { margin: 0; padding: 0; border: none; }
-    .nav-link { color: #fff; margin: 0 0px; font-weight: 400; text-decoration: none; }
-    .nav-link:hover { color: #2980b9; }
-    p.project-text { font-size: 1.15rem; line-height: 1.8; color: #333; text-align: left; }
-    .team-list { list-style-type: none; padding: 0; font-size: 1.1rem; line-height: 1.6; color: #555; }
-    .team-list li { margin-bottom: 5px; }
+    
+    .nav-link { color: #fff; margin: 0 0px; font-weight: 500; text-decoration: none; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 1px;}
+    .nav-link:hover { color: #d35400; }
+    
+    p.project-text { font-size: 1.15rem; line-height: 1.8; color: #4a3b32; text-align: left; }
+    
+    .team-list { list-style-type: none; padding: 0; font-size: 1.1rem; line-height: 1.6; color: #4a3b32; }
+    .team-list li { margin-bottom: 8px; font-weight: 500; }
+    
+    /* Rustic Wood Panels */
+    .wood-panel {
+      background-color: #e6cfa3; 
+      padding: 35px; 
+      border: 6px solid #5d4037;
+      border-radius: 8px; 
+      box-shadow: 6px 6px 0px rgba(93, 64, 55, 0.4);
+    }
+    
+    .wood-header {
+        font-family: 'Rye', serif; 
+        color: #3e2723; 
+        margin-bottom: 20px; 
+        letter-spacing: 1px;
+    }
+
+    /* Chunky Wood Buttons */
+    .wood-btn {
+      background-color: #5d4037; 
+      color: #fff !important; 
+      padding: 12px 35px; 
+      border-radius: 4px; 
+      border: 3px solid #3e2723;
+      font-family: 'Rye', serif; 
+      font-size: 1.3rem;
+      text-decoration: none; 
+      display: inline-block;
+      transition: transform 0.2s, background-color 0.2s;
+      box-shadow: 4px 4px 0px rgba(62, 39, 35, 0.5);
+      letter-spacing: 2px;
+    }
+    .wood-btn:hover {
+        transform: translateY(-3px);
+        background-color: #795548;
+    }
   </style>
 </head>
 
-<body style="background-color: #f9f9f9;">
+<body>
   <main>
-    <div class="navbar-section" style="background-color: #1a252f; border-bottom: 3px solid #2980b9;">
+    <div class="navbar-section" style="background-color: #1a252f; padding: 10px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #d35400;">
       <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
-        <div style="flex: 1; padding-left: 20px;">
-          <a href="index.html"><img src="assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px;"></a>
+        <div style="flex: 1; padding-left: 20px; display: flex; align-items: center;">
+          <a href="index.html" style="display: flex;"><img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
         </div>
-        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px;">
-          <a href="index.html#projects" class="nav-link" style="font-weight: bold; color: #2980b9;">&larr; Back to Portfolio</a>
+        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; align-items: center;">
+          <a href="index.html#projects" class="nav-link"><i class="fa fa-chevron-left" style="font-size: 1rem;"></i> Back to Portfolio</a>
         </div>
-        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
-          <a href="https://youtube.com/SuperGamingCo" target="_blank">
-            <img src="assets/img/Youtube.png" alt="Youtube" style="height: 45px; margin-top: 5px;">
+        <div style="flex: 1; display: flex; justify-content: flex-end; align-items: center; padding-right: 20px;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex;">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 35px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
           </a>
         </div>
       </div>
     </div>
 
-    <section class="section" style="background-color: #2c3e50; padding: 80px 0; text-align: center;">
+    <section class="section" style="background-color: #87CEEB; padding: 80px 0 60px 0; text-align: center; border-bottom: 8px solid #6b4226;">
       <div class="container">
-        <h1 class="white-text" style="font-family: 'Rye', serif; font-size: 4.5rem; margin: 0; letter-spacing: 2px;">Chop-Off</h1>
+        <h1 style="font-family: 'Rye', serif; font-size: 5.5rem; margin: 0; letter-spacing: 4px; color: #3e2723; text-shadow: 3px 3px 0px #e6cfa3;">Chop-Off!</h1>
+        <h4 style="color: #5d4037; font-weight: 700; margin-top: 10px; letter-spacing: 2px; text-transform: uppercase; font-size: 1.5rem;">Competitive Lumberjack Action</h4>
       </div>
     </section>
 
-    <section class="section" style="padding: 80px 0; background-color: #ffffff;">
+    <section class="section" style="padding: 80px 0; background-color: #f4eadd;">
       <div class="container">
         <div class="row valign-wrapper" style="flex-wrap: wrap;">
           
-          <div class="col s12 m4" style="padding-right: 20px;">
-            <p class="project-text">
-              In the 2024 Spring Semester at Champlain College, I worked on <b>Chop-Off!</b> My efforts on the game included working on documentation, implementing art assets, implementing font, scoring, and more!
-            </p>
+          <div class="col s12 m7" style="padding-right: 20px; margin-bottom: 30px;">
+            <img src="/assets/img/image_058d4e.jpg" alt="Chop-Off Main Menu" class="responsive-img hoverable materialboxed" data-caption="Chop-Off! Main Menu Screen" style="width: 100%; border: 6px solid #5d4037; border-radius: 8px; box-shadow: 6px 6px 0px rgba(93, 64, 55, 0.4);">
           </div>
 
-          <div class="col s12 m4 center-align">
-            <img src="assets/img/Chop-Off.png" alt="Chop-Off Logo" class="responsive-img hoverable" style="max-width: 100%; border-radius: 8px;">
-            <div style="margin-top: 25px;">
-              <p style="font-weight: bold; margin-bottom: 10px; color: #555;">Passcode: EGD220SP2024project3</p>
-              <a href="https://commandburn.itch.io/chop-off" target="_blank" class="hoverable" style="background-color: #5d4037; color: white; padding: 12px 30px; border-radius: 5px; font-weight: bold; text-decoration: none; font-size: 1.1rem;">Play Game</a>
+          <div class="col s12 m5" style="padding-left: 20px;">
+            <div class="wood-panel">
+                <h4 class="wood-header">The Project</h4>
+                <p class="project-text">
+                  In the 2024 Spring Semester at Champlain College, I worked on <b>Chop-Off!</b> My efforts on the game included working on documentation, implementing art assets, implementing fonts, scoring, and more!
+                </p>
+                
+                <h5 class="wood-header" style="font-size: 1.5rem; margin-top: 30px;">The Team</h5>
+                <ul class="team-list">
+                  <li><i class="fa fa-tree" style="color: #d35400;"></i> Fable Spagat</li>
+                  <li><i class="fa fa-tree" style="color: #d35400;"></i> Jason Richter</li>
+                  <li><i class="fa fa-tree" style="color: #d35400;"></i> John Renaud</li>
+                  <li><i class="fa fa-tree" style="color: #d35400;"></i> Marie Kutschke</li>
+                  <li><i class="fa fa-tree" style="color: #d35400;"></i> Owen Stanclift</li>
+                  <li><i class="fa fa-tree" style="color: #d35400;"></i> Zachary Alexander</li>
+                  <li><i class="fa fa-star" style="color: #2980b9;"></i> <b>Steven Bruns</b></li>
+                </ul>
+
+                <div style="margin-top: 30px; text-align: center;">
+                  <p style="font-weight: bold; margin-bottom: 15px; color: #5d4037;">Passcode: EGD220SP2024project3</p>
+                  <a href="https://commandburn.itch.io/chop-off" target="_blank" class="wood-btn">Play Game</a>
+                </div>
             </div>
           </div>
 
-          <div class="col s12 m4" style="padding-left: 20px;">
-            <h5 style="color: #2c3e50; font-weight: bold; margin-top: 0;">CO-OP Project</h5>
-            <p style="color: #777; font-style: italic; margin-bottom: 15px;">By:</p>
-            <ul class="team-list">
-              <li>Fable Spagat</li>
-              <li>Jason Richter</li>
-              <li>John Renaud</li>
-              <li>Marie Kutschke</li>
-              <li>Owen Stanclift</li>
-              <li>Zachary Alexander</li>
-              <li><b>Steven Bruns</b></li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding: 80px 0; background-color: #f4f6f7;">
+    <section class="section" style="padding: 80px 0; background-color: #e2cca6; border-top: 4px dashed #5d4037; border-bottom: 4px dashed #5d4037;">
       <div class="container">
-        <div class="row valign-wrapper" style="flex-wrap: wrap;">
-          
-          <div class="col s12 m5">
-            <p class="project-text">
-              The game came out incredibly well! This was the third group project I have worked on in my Game Studio class, and the polish that we were able to manage in such a short amount of time is both incredible and exciting.
-            </p>
-            <p class="project-text">
-              I enjoyed working with a team to make a good product and I cannot wait to work with more teams on exciting games in the future!
-            </p>
+        <h3 class="center-align wood-header" style="font-size: 3.5rem; margin-bottom: 50px;">Gameplay & Design</h3>
+        
+        <div class="row valign-wrapper" style="flex-wrap: wrap; margin-bottom: 60px;">
+          <div class="col s12 m5" style="padding-right: 20px;">
+            <div class="wood-panel">
+                <p class="project-text">
+                  The game came out incredibly well! This was the third group project I have worked on in my Game Studio class, and the polish that we were able to manage in such a short amount of time is both incredible and exciting.
+                </p>
+                <p class="project-text">
+                  I enjoyed working with a team to make a good product and I cannot wait to work with more teams on exciting games in the future!
+                </p>
+            </div>
           </div>
-
           <div class="col s12 m7 center-align">
-            <img src="assets/img/Chop-Off VDS.png" alt="Chop-Off Visual Design Summary" class="responsive-img hoverable" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            <img src="/assets/img/image_058d6d.png" alt="WoodSlice Tutorial" class="responsive-img hoverable materialboxed" data-caption="In-game tutorial demonstrating the WoodSlice mechanic." style="border: 6px solid #5d4037; border-radius: 8px; box-shadow: 6px 6px 0px rgba(93, 64, 55, 0.4);">
           </div>
-
         </div>
+
+        <div class="row">
+            <div class="col s12 center-align">
+                <h5 class="wood-header">Visual Design Summary</h5>
+                <img src="/assets/img/image_059093.jpg" alt="Chop-Off Visual Design Summary" class="responsive-img hoverable materialboxed" data-caption="Visual Design Summary outlining Swipe Wood, Toss Axes, and Saw Logs minigames." style="border: 6px solid #5d4037; border-radius: 8px; box-shadow: 6px 6px 0px rgba(93, 64, 55, 0.4); max-width: 100%;">
+            </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="section" style="padding: 80px 0; background-color: #ffffff;">
+    <section class="section" style="padding: 80px 0; background-color: #f4eadd;">
       <div class="container center-align">
-        <h4 style="color: #2c3e50; font-weight: bold; margin-bottom: 50px;">Documentation</h4>
+        <h3 class="wood-header" style="font-size: 3.5rem; margin-bottom: 50px;">Documentation</h3>
         
         <div class="row">
           <div class="col s12 m6 center-align" style="margin-bottom: 30px;">
-            <div class="card hoverable" style="padding: 40px 20px; border-top: 4px solid #5d4037;">
-              <i class="fa fa-file-text-o" style="font-size: 3rem; color: #5d4037; margin-bottom: 20px;"></i>
-              <h5 style="margin: 0 0 20px 0; font-weight: bold; color: #333;">Game Design Document</h5>
-              <a href="assets/img/Chop-Off GDD.pdf" target="_blank" style="color: #2980b9; font-weight: bold; font-size: 1.1rem; text-decoration: underline;">View PDF</a>
+            <div class="wood-panel hoverable" style="padding: 40px 20px; text-align: center;">
+              <i class="fa fa-file-text-o" style="font-size: 4rem; color: #5d4037; margin-bottom: 20px;"></i>
+              <h5 class="wood-header" style="font-size: 1.8rem; margin: 0 0 20px 0;">Game Design Document</h5>
+              <a href="assets/img/Chop-Off GDD.pdf" target="_blank" class="wood-btn" style="font-size: 1.1rem; padding: 10px 25px;">View PDF</a>
             </div>
           </div>
 
           <div class="col s12 m6 center-align">
-            <div class="card hoverable" style="padding: 40px 20px; border-top: 4px solid #5d4037;">
-              <i class="fa fa-lightbulb-o" style="font-size: 3rem; color: #5d4037; margin-bottom: 20px;"></i>
-              <h5 style="margin: 0 0 20px 0; font-weight: bold; color: #333;">Game Concept Document</h5>
-              <a href="assets/img/Chop-Off GCD.pdf" target="_blank" style="color: #2980b9; font-weight: bold; font-size: 1.1rem; text-decoration: underline;">View PDF</a>
+            <div class="wood-panel hoverable" style="padding: 40px 20px; text-align: center;">
+              <i class="fa fa-lightbulb-o" style="font-size: 4rem; color: #5d4037; margin-bottom: 20px;"></i>
+              <h5 class="wood-header" style="font-size: 1.8rem; margin: 0 0 20px 0;">Game Concept Document</h5>
+              <a href="assets/img/Chop-Off GCD.pdf" target="_blank" class="wood-btn" style="font-size: 1.1rem; padding: 10px 25px;">View PDF</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background-color: #1a252f; padding: 60px 0; text-align: center;">
-      <h4 class="white-text" style="font-weight: bold; margin-bottom: 20px;">Get In Touch</h4>
-      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 950px;">
-        <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #2980b9; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold; text-decoration: none;"><i class="fa fa-envelope"></i> steveneb0212@gmail.com</a>
-        <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #333; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold; text-decoration: none;"><i class="fa fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #0077b5; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold; text-decoration: none;"><i class="fa fa-linkedin"></i> LinkedIn</a>
-      </div>
-    </section>
+    <section id="contact" class="section scrollspy" style="background-image: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%); padding: 80px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; border-top: 8px solid #5d4037;">
+        <div style="width: 100%; text-align: center; padding: 0 20px;">
+          <h3 class="white-text" style="margin: 0 auto 40px auto; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Get In Touch</h3>
+          
+          <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 800px;">
+            <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #d35400; color: white; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
+              <i class="fa fa-envelope" style="font-size: 1.2rem; margin: 0;"></i> steveneb0212@gmail.com
+            </a>
+            <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #333; color: white; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
+              <i class="fa fa-github" style="font-size: 1.2rem; margin: 0;"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #3498db; color: white; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
+              <i class="fa fa-linkedin" style="font-size: 1.2rem; margin: 0;"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
 
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.materialboxed').materialbox();
+    });
+  </script>
 </body>
 </html>
