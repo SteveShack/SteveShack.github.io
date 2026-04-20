@@ -14,10 +14,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
-    /* URL-encoded the space in the font name to ensure the browser loads it correctly */
+    /* Fixed the URL formatting to ensure the browser loads it correctly despite spaces */
     @font-face {
         font-family: 'Rocky Road';
-        src: url('/assets/fonts/Rocky%20Road.otf') format('opentype');
+        src: url('/assets/fonts/Rocky Road.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
     }
@@ -64,14 +64,13 @@
       justify-content: center;
       font-family: 'Rocky Road', 'Impact', sans-serif;
       font-size: 1.5rem;
-      color: #242424 !important;
+      /* FIX: Standardized text color to white with a dark shadow for all buttons */
+      color: #FFF !important; 
       background-image: url('/assets/img/S_MenuButton.png');
       background-size: 100% 100%;
       /* FIXED DIMENSIONS: Locks the aspect ratio so the rock never stretches or squishes */
       width: 260px;
       height: 80px;
-      padding: 0; /* Removed padding so text fits perfectly inside the fixed dimensions */
-      box-sizing: border-box;
       background-color: transparent;
       background-repeat: no-repeat;
       background-position: center;
@@ -82,18 +81,17 @@
       letter-spacing: 2px;
       transition: transform 0.2s ease, filter 0.2s ease;
       flex-shrink: 0; 
-      text-shadow: 1px 1px 0px rgba(255,255,255,0.4);
+      /* Strong shadow for legibility on dark rock */
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
     }
     .rock-btn:hover {
       transform: translateY(-3px) scale(1.05);
       filter: brightness(1.15);
     }
     
-    /* A tint for the play button if you still want it to stand out */
+    /* Play button tint now only affects background saturation/hue, not text color */
     .rock-btn.play-btn {
         filter: hue-rotate(320deg) saturate(1.5); 
-        color: #FFF !important;
-        text-shadow: 2px 2px 0px rgba(0,0,0,0.6);
     }
     .rock-btn.play-btn:hover {
         filter: hue-rotate(320deg) saturate(1.8) brightness(1.15);
@@ -119,9 +117,19 @@
       </div>
     </div>
 
-    <section class="section" style="background-color: #242424; padding: 80px 0; text-align: center;">
-        <img src="/assets/img/Placeholder.png" alt="Pick Some Axe Logo" class="responsive-img" style="max-width: 600px; filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.8));">
-        <p style="color: #4CAF50; font-size: 2.2rem; font-family: 'Rocky Road', 'Impact', sans-serif; letter-spacing: 3px; margin-top: 20px; text-shadow: 2px 2px 0px #000;">Action Platformer</p>
+    <section class="section" style="background-image: linear-gradient(rgba(36,36,36,0.5), rgba(36,36,36,0.9)), url('/assets/img/Placeholder.png'); background-size: cover; background-position: center; padding: 100px 0; border-bottom: 6px solid #4CAF50;">
+        <div class="container">
+            <div class="row valign-wrapper" style="margin-bottom: 0;">
+                <div class="col s12 m5 center-align" style="padding-bottom: 30px;">
+                    <img src="/assets/img/Placeholder.png" alt="Pick Some Axe Logo" class="responsive-img" style="max-width: 100%; filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.8));">
+                </div>
+                <div class="col s12 m7" style="padding-left: 40px;">
+                    <h1 style="font-family: 'Rocky Road', sans-serif; color: #FFF; font-size: 5rem; letter-spacing: 2px; text-shadow: 4px 4px 8px rgba(0,0,0,0.9); margin: 0;">Pick Some Axe</h1>
+                    <p style="color: #4CAF50; font-size: 2.2rem; font-family: 'Rocky Road', sans-serif; letter-spacing: 3px; margin-top: 10px; text-shadow: 2px 2px 0px #000;">Action Platformer Collectathon</p>
+                    <p style="font-size: 1.2rem; color: #E0E0E0; line-height: 1.6; margin-top: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Rescue Jasper from the depths! Join Joe Miner as you Belly Bash Pebblets, harvest Gembits, and dig through treacherous subterranean terrains in this stylized, single-player collectathon.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="quick-facts center-align">
@@ -131,7 +139,7 @@
           <div class="col s6 m4 l2"><span class="fact-title">Team Size</span><br><span class="fact-detail">12 Developers</span></div>
           <div class="col s6 m4 l2"><span class="fact-title">Engine</span><br><span class="fact-detail">Unity</span></div>
           <div class="col s6 m4 l2"><span class="fact-title">Tools</span><br><span class="fact-detail">C#, Git, Jira, FMOD</span></div>
-          <div class="col s6 m4 l2"><span class="fact-title">Platforms</span><br><span class="fact-detail">PC</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Platforms</span><br><span class="fact-detail" style="display: flex; align-items: center; gap: 6px; justify-content: center;"><i class="fa fa-steam"></i> <i class="fa fa-play"></i> PC</span></div>
           <div class="col s6 m4 l2"><span class="fact-title">Timeline</span><br><span class="fact-detail">Aug 2025 - May 2026</span></div>
         </div>
       </div>
@@ -145,12 +153,12 @@
           </div>
           <div class="col s12 m7">
             <div class="stone-panel">
-                <h4 style="font-family: 'Rocky Road', 'Impact', sans-serif; color: #242424; font-size: 3.8rem; margin-top: 0; text-shadow: 1px 1px 0px #FFF;">Time to dig deep!</h4>
+                <h4 style="font-family: 'Rocky Road', sans-serif; color: #242424; font-size: 3.8rem; margin-top: 0; text-shadow: 1px 1px 0px #FFF;">Time to dig deep!</h4>
                 <p class="project-text">
-                    In the game <strong>Pick Some Axe</strong>, step into the boots of Joe Miner as you battle Pebblets, collect shiny Gembits, and explore treacherous terrains. All of this in your quest to rescue your beloved husband, Jasper, from the depths no spelunker dares to go. Delve into this single-player experience, a 3D platform collectathon like no other!
+                    In <strong>Pick Some Axe</strong>, you step into the boots of Joe Miner, embarking on a quest to rescue your beloved husband, Jasper, from depths no spelunker dares to go. To survive, you must navigate treacherous terrains, battle aggressive Pebblets, and master innovative mechanics like digging and the dynamic Belly Bash.
                 </p>
                 <p class="project-text">
-                    Developing this alongside an incredible team allowed me to touch almost every corner of the cave system. From architecting core player mechanics and building out the lush environments of The Grove, to scripting the game's narrative and personally recording the voices for several characters, my work spans across the entire development pipeline.
+                    Developing this capstone senior project allowed me to wear many hats. From architecting core player systems and building out the lush environments of The Grove, to scripting the game's narrative and personally recording character voices, my work spanned the entire development pipeline.
                 </p>
             </div>
           </div>
@@ -160,7 +168,7 @@
 
     <section class="section" style="padding: 80px 0 40px 0; background-color: #242424;">
       <div class="container">
-        <h3 class="center-align" style="font-family: 'Rocky Road', 'Impact', sans-serif; color: #E0E0E0; margin-bottom: 50px; font-size: 4.5rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">My Contributions</h3>
+        <h3 class="center-align" style="font-family: 'Rocky Road', sans-serif; color: #E0E0E0; margin-bottom: 50px; font-size: 4.5rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">My Contributions</h3>
 
         <div class="row valign-wrapper" style="margin-bottom: 60px; flex-wrap: wrap;">
           <div class="col s12 m5 center-align">
@@ -175,10 +183,10 @@
         </div>
         
         <div class="row valign-wrapper" style="margin-bottom: 60px; flex-wrap: wrap; flex-direction: row-reverse;">
-          <div class="col s12 m5 center-align">
+          <div class="col s12 m6 center-align">
              <img src="/assets/img/SulfricBashed.gif" alt="Sulfric Explosion Chain Reaction" class="responsive-img hoverable materialboxed" data-caption="Triggering a chain reaction of explosions by bashing Sulfric into other enemies—the core of this level's combat loop." style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8); width: 100%;">
           </div>
-          <div class="col s12 m7" style="padding: 0 20px;">
+          <div class="col s12 m6" style="padding: 0 20px;">
             <div class="stone-panel" style="background-color: #B59E9A;">
               <h5 class="contribution-header">Systems: The Belly Bash & Sulfric</h5>
               <p class="project-text">Early into the project I developed the <strong>Belly Bash</strong> mechanic. This was the first of Joe's Belly-related moves to get implemented! Concepted with the idea of having Joe throw himself belly-first into enemies, it allowed us to utilize his rotund stature in interesting ways which, when combined with the digging mechanic, allows for all sorts of traversal and attacks.</p>
