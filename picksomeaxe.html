@@ -95,13 +95,13 @@
         filter: hue-rotate(320deg) saturate(1.8) brightness(1.15);
     }
 
-    /* Custom Gembit Bounce */
-    #gembit-btn {
+    /* Custom Easter Egg Bounce for Gembit and Keepsake */
+    #gembit-btn, #keepsake-btn {
         cursor: pointer;
         transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.5));
     }
-    #gembit-btn:hover {
+    #gembit-btn:hover, #keepsake-btn:hover {
         transform: scale(1.1) translateY(-2px);
     }
   </style>
@@ -208,8 +208,11 @@
             </div>
           </div>
           <div class="col s12 m6" style="margin-bottom: 20px;">
-            <div class="stone-panel" style="background-color: #C0B7A1;">
-              <h5 class="contribution-header">Narrative</h5>
+            <div class="stone-panel" style="background-color: #C0B7A1; position: relative;">
+
+              <img src="/assets/img/esmwatch.png" id="keepsake-btn" title="Click for Sound!" alt="Interactive Keepsake" style="position: absolute; top: -25px; right: -25px; width: 90px; z-index: 10; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));">
+              
+              <h5 class="contribution-header" style="padding-right: 40px;">Narrative</h5>
               <p class="project-text">To create our rocky adventure, I created and iterated on the narrative of Pick Some Axe, ensuring that the story is fun and welcoming for all players to enjoy! Originally when we concepted the game, Joe would be saving his wife Esmerelda, but over time we realized we wanted Esmerelda to better reflect Joe in stature, and wanted to stay away from the typical Damsel in Distress trope, and thus Jasper was born!</p>
             </div>
           </div>
@@ -269,20 +272,36 @@
       // Interactive Gembit Audio Logic
       const gembitBtn = document.getElementById('gembit-btn');
       
-      // Array of sound paths. You can add more paths here like '/assets/img/Joe_Yell.wav' later!
+      // Array of sound paths for the Gembit. You can add more paths here if you want!
       const gembitSounds = [
           '/assets/img/Testing.wav'
       ];
       
       if(gembitBtn) {
           gembitBtn.addEventListener('click', function() {
-              // Pick a random sound from the array
               const randomSound = gembitSounds[Math.floor(Math.random() * gembitSounds.length)];
               const audio = new Audio(randomSound);
               audio.play();
               
               // Apply a quick little bump animation
               this.style.transform = 'scale(1.3) rotate(10deg)';
+              setTimeout(() => {
+                  this.style.transform = 'scale(1) rotate(0deg)';
+              }, 150);
+          });
+      }
+
+      // Interactive Keepsake Audio Logic
+      const keepsakeBtn = document.getElementById('keepsake-btn');
+      
+      if(keepsakeBtn) {
+          keepsakeBtn.addEventListener('click', function() {
+              // URL Encoded the space as %20 so browsers don't break the path
+              const audio = new Audio('/assets/img/Keepsake%20Get.wav');
+              audio.play();
+              
+              // Apply a quick little bump animation (rotated the other way for variety)
+              this.style.transform = 'scale(1.3) rotate(-10deg)';
               setTimeout(() => {
                   this.style.transform = 'scale(1) rotate(0deg)';
               }, 150);
