@@ -14,10 +14,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
-    /* Fixed the URL formatting to ensure the browser loads it correctly despite spaces */
+    /* URL-encoded the space in the font name to ensure the browser loads it correctly */
     @font-face {
         font-family: 'Rocky Road';
-        src: url('/assets/fonts/Rocky Road.otf') format('opentype');
+        src: url('/assets/fonts/Rocky%20Road.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
     }
@@ -70,6 +70,8 @@
       /* FIXED DIMENSIONS: Locks the aspect ratio so the rock never stretches or squishes */
       width: 260px;
       height: 80px;
+      padding: 0; /* Removed padding so text fits perfectly inside the fixed dimensions */
+      box-sizing: border-box;
       background-color: transparent;
       background-repeat: no-repeat;
       background-position: center;
@@ -173,10 +175,10 @@
         </div>
         
         <div class="row valign-wrapper" style="margin-bottom: 60px; flex-wrap: wrap; flex-direction: row-reverse;">
-          <div class="col s12 m6 center-align">
+          <div class="col s12 m5 center-align">
              <img src="/assets/img/SulfricBashed.gif" alt="Sulfric Explosion Chain Reaction" class="responsive-img hoverable materialboxed" data-caption="Triggering a chain reaction of explosions by bashing Sulfric into other enemies—the core of this level's combat loop." style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8); width: 100%;">
           </div>
-          <div class="col s12 m6" style="padding: 0 20px;">
+          <div class="col s12 m7" style="padding: 0 20px;">
             <div class="stone-panel" style="background-color: #B59E9A;">
               <h5 class="contribution-header">Systems: The Belly Bash & Sulfric</h5>
               <p class="project-text">Early into the project I developed the <strong>Belly Bash</strong> mechanic. This was the first of Joe's Belly-related moves to get implemented! Concepted with the idea of having Joe throw himself belly-first into enemies, it allowed us to utilize his rotund stature in interesting ways which, when combined with the digging mechanic, allows for all sorts of traversal and attacks.</p>
@@ -217,7 +219,7 @@
       <div class="container" style="position: relative; z-index: 2;">
         <div class="row valign-wrapper" style="flex-wrap: wrap; justify-content: center; text-align: center;">
           <div class="col s12">
-            <h4 style="color: #FFF; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 4.5rem; margin-bottom: 40px; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">Ready to grab an axe?</h4>
+            <h4 style="color: #FFF; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 4.5rem; margin-bottom: 40px; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">Ready to delve into the mines?</h4>
             
             <div class="rock-btn-container">
                 <a href="https://store.steampowered.com/app/4459260/Pick_Some_Axe/" target="_blank" class="rock-btn play-btn">
