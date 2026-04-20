@@ -29,7 +29,7 @@
     .navbar-section, .navbar-section .row { margin: 0; padding: 0; border: none; }
     
     /* Ensuring the navbar links get the Rocky Road font too */
-    .nav-link { font-family: 'Rocky Road', sans-serif; color: #E0E0E0; margin: 0 0px; text-decoration: none; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;}
+    .nav-link { font-family: 'Rocky Road', 'Impact', sans-serif; color: #E0E0E0; margin: 0 0px; text-decoration: none; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;}
     .nav-link:hover { color: #4CAF50; } 
     
     p.project-text { font-size: 1.15rem; line-height: 1.8; text-align: left; color: #242424; }
@@ -38,7 +38,7 @@
     .fact-title { font-weight: 700; color: #4CAF50; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
     .fact-detail { font-weight: 500; font-size: 1.1rem; color: #E0E0E0; }
     
-    .contribution-header { color: #242424; font-weight: bold; margin-bottom: 15px; font-family: 'Rocky Road', sans-serif; font-size: 2.5rem; letter-spacing: 2px;}
+    .contribution-header { color: #242424; font-weight: bold; margin-bottom: 15px; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 2.5rem; letter-spacing: 2px;}
     
     .stone-panel {
       background-color: #B0B0B0; 
@@ -53,8 +53,8 @@
     .rock-btn-container {
         display: flex;
         justify-content: center;
-        align-items: center; /* Prevents flex children from stretching vertically */
-        gap: 25px;
+        align-items: center; 
+        gap: 20px;
         flex-wrap: wrap;
     }
 
@@ -62,33 +62,36 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Rocky Road', sans-serif;
-      font-size: 1.8rem;
+      font-family: 'Rocky Road', 'Impact', sans-serif;
+      font-size: 1.5rem;
       color: #242424 !important;
       background-image: url('/assets/img/S_MenuButton.png');
-      background-size: 100% 100%; /* Will scale to the padding perfectly now */
+      background-size: 100% 100%;
+      /* FIXED DIMENSIONS: Locks the aspect ratio so the rock never stretches or squishes */
+      width: 260px;
+      height: 80px;
       background-color: transparent;
       background-repeat: no-repeat;
       background-position: center;
-      padding: 20px 50px; /* Fixed padding so it keeps its shape */
       margin: 0;
       border: none;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 2px;
       transition: transform 0.2s ease, filter 0.2s ease;
-      /* Added flex-shrink to prevent it from getting squished on smaller screens */
       flex-shrink: 0; 
+      text-shadow: 1px 1px 0px rgba(255,255,255,0.4);
     }
     .rock-btn:hover {
       transform: translateY(-3px) scale(1.05);
       filter: brightness(1.15);
     }
     
-    /* Optional: A tint for the play button if you still want it to stand out */
+    /* A tint for the play button if you still want it to stand out */
     .rock-btn.play-btn {
-        filter: hue-rotate(320deg) saturate(1.5); /* Tints the rock red without overriding the image */
+        filter: hue-rotate(320deg) saturate(1.5); 
         color: #FFF !important;
+        text-shadow: 2px 2px 0px rgba(0,0,0,0.6);
     }
     .rock-btn.play-btn:hover {
         filter: hue-rotate(320deg) saturate(1.8) brightness(1.15);
@@ -116,7 +119,7 @@
 
     <section class="section" style="background-color: #242424; padding: 80px 0; text-align: center;">
         <img src="/assets/img/Placeholder.png" alt="Pick Some Axe Logo" class="responsive-img" style="max-width: 600px; filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.8));">
-        <p style="color: #4CAF50; font-size: 2.2rem; font-family: 'Rocky Road', sans-serif; letter-spacing: 3px; margin-top: 20px; text-shadow: 2px 2px 0px #000;">Action Platformer</p>
+        <p style="color: #4CAF50; font-size: 2.2rem; font-family: 'Rocky Road', 'Impact', sans-serif; letter-spacing: 3px; margin-top: 20px; text-shadow: 2px 2px 0px #000;">Action Platformer</p>
     </section>
 
     <div class="quick-facts center-align">
@@ -140,7 +143,7 @@
           </div>
           <div class="col s12 m7">
             <div class="stone-panel">
-                <h4 style="font-family: 'Rocky Road', sans-serif; color: #242424; font-size: 3.8rem; margin-top: 0; text-shadow: 1px 1px 0px #FFF;">Time to dig deep!</h4>
+                <h4 style="font-family: 'Rocky Road', 'Impact', sans-serif; color: #242424; font-size: 3.8rem; margin-top: 0; text-shadow: 1px 1px 0px #FFF;">Time to dig deep!</h4>
                 <p class="project-text">
                     In the game <strong>Pick Some Axe</strong>, step into the boots of Joe Miner as you battle Pebblets, collect shiny Gembits, and explore treacherous terrains. All of this in your quest to rescue your beloved husband, Jasper, from the depths no spelunker dares to go. Delve into this single-player experience, a 3D platform collectathon like no other!
                 </p>
@@ -155,7 +158,7 @@
 
     <section class="section" style="padding: 80px 0 40px 0; background-color: #242424;">
       <div class="container">
-        <h3 class="center-align" style="font-family: 'Rocky Road', sans-serif; color: #E0E0E0; margin-bottom: 50px; font-size: 4.5rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">My Contributions</h3>
+        <h3 class="center-align" style="font-family: 'Rocky Road', 'Impact', sans-serif; color: #E0E0E0; margin-bottom: 50px; font-size: 4.5rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">My Contributions</h3>
 
         <div class="row valign-wrapper" style="margin-bottom: 60px; flex-wrap: wrap;">
           <div class="col s12 m5 center-align">
@@ -170,11 +173,10 @@
         </div>
         
         <div class="row valign-wrapper" style="margin-bottom: 60px; flex-wrap: wrap; flex-direction: row-reverse;">
-          <div class="col s12 m5 center-align">
-             <img src="/assets/img/image_e9e171.jpg" alt="Combat against Sulfric" class="responsive-img hoverable materialboxed" data-caption="Using the Belly Bash to knock the explosive Sulfric into other enemies." style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8); margin-bottom: 15px;">
-            <img src="/assets/img/image_e9e1ad.jpg" alt="Sulfric Explosion Chain Reaction" class="responsive-img hoverable materialboxed" data-caption="Triggering a chain reaction of explosions—the core of this level's combat loop." style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8);">
+          <div class="col s12 m6 center-align">
+             <img src="/assets/img/SulfricBashed.gif" alt="Sulfric Explosion Chain Reaction" class="responsive-img hoverable materialboxed" data-caption="Triggering a chain reaction of explosions by bashing Sulfric into other enemies—the core of this level's combat loop." style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8); width: 100%;">
           </div>
-          <div class="col s12 m7" style="padding: 0 20px;">
+          <div class="col s12 m6" style="padding: 0 20px;">
             <div class="stone-panel" style="background-color: #B59E9A;">
               <h5 class="contribution-header">Systems: The Belly Bash & Sulfric</h5>
               <p class="project-text">Early into the project I developed the <strong>Belly Bash</strong> mechanic. This was the first of Joe's Belly-related moves to get implemented! Concepted with the idea of having Joe throw himself belly-first into enemies, it allowed us to utilize his rotund stature in interesting ways which, when combined with the digging mechanic, allows for all sorts of traversal and attacks.</p>
@@ -202,7 +204,7 @@
 
     <section class="section" style="padding: 80px 0; background-color: #384230; border-top: 6px solid #1A1A1A;">
       <div class="container center-align">
-        <h3 style="font-family: 'Rocky Road', sans-serif; color: #FFF; margin-bottom: 40px; font-size: 4rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">Watch It In Action</h3>
+        <h3 style="font-family: 'Rocky Road', 'Impact', sans-serif; color: #FFF; margin-bottom: 40px; font-size: 4rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">Watch It In Action</h3>
         <div class="video-container hoverable" style="max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 6px solid #000; box-shadow: 8px 8px 0px rgba(0,0,0,0.6);">
           <iframe width="853" height="480" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -215,14 +217,14 @@
       <div class="container" style="position: relative; z-index: 2;">
         <div class="row valign-wrapper" style="flex-wrap: wrap; justify-content: center; text-align: center;">
           <div class="col s12">
-            <h4 style="color: #FFF; font-family: 'Rocky Road', sans-serif; font-size: 4.5rem; margin-bottom: 40px; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">Ready to grab an axe?</h4>
+            <h4 style="color: #FFF; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 4.5rem; margin-bottom: 40px; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">Ready to grab an axe?</h4>
             
             <div class="rock-btn-container">
-                <a href="YOUR_STEAM_LINK" target="_blank" class="rock-btn play-btn">
-                  Wishlist on Steam
+                <a href="https://store.steampowered.com/app/4459260/Pick_Some_Axe/" target="_blank" class="rock-btn play-btn">
+                  Play on Steam!
                 </a>
-                <a href="YOUR_ITCH_IO_LINK" target="_blank" class="rock-btn">
-                  Play on Itch.io
+                <a href="https://steveshack.itch.io/pick-some-axe" target="_blank" class="rock-btn">
+                  Play on Itch.io!
                 </a>
             </div>
 
@@ -232,11 +234,11 @@
     </section>
 
     <section class="section" style="background-color: #1A1A1A; padding: 60px 0; text-align: center; border-top: 4px solid #4CAF50;">
-      <h4 class="white-text" style="font-weight: bold; margin-bottom: 30px; font-family: 'Rocky Road', sans-serif; font-size: 3rem; letter-spacing: 2px;">Get In Touch</h4>
+      <h4 class="white-text" style="font-weight: bold; margin-bottom: 30px; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 3rem; letter-spacing: 2px;">Get In Touch</h4>
       <div class="rock-btn-container" style="max-width: 950px; margin: 0 auto;">
-        <a href="mailto:steveneb0212@gmail.com" target="_blank" class="rock-btn" style="font-size: 1.4rem; padding: 15px 30px;">Email</a>
-        <a href="http://github.com/steveshack" target="_blank" class="rock-btn" style="font-size: 1.4rem; padding: 15px 30px;">GitHub</a>
-        <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="rock-btn" style="font-size: 1.4rem; padding: 15px 30px;">LinkedIn</a>
+        <a href="mailto:steveneb0212@gmail.com" target="_blank" class="rock-btn">Email</a>
+        <a href="http://github.com/steveshack" target="_blank" class="rock-btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="rock-btn">LinkedIn</a>
       </div>
     </section>
 
