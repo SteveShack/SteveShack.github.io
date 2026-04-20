@@ -9,85 +9,40 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   
   <style>
-    @font-face {
-        font-family: 'Rocky Road';
-        src: url('/assets/fonts/Rocky%20Road.otf') format('opentype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
     main { padding-left: 0 !important; }
     
-    /* Unified Dark Theme */
-    body { background-color: #242424; font-family: 'Roboto', sans-serif; color: #E0E0E0; }
+    /* Clean Tech Theme */
+    body { background-color: #f4f6f7; font-family: 'Roboto', sans-serif; color: #333; }
     .navbar-section, .navbar-section .row { margin: 0; padding: 0; border: none; }
     
-    .nav-link { font-family: 'Rocky Road', 'Impact', sans-serif; color: #E0E0E0; margin: 0 0px; text-decoration: none; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;}
-    .nav-link:hover { color: #4CAF50; } 
+    .nav-link { color: #E0E0E0; margin: 0 0px; text-decoration: none; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;}
+    .nav-link:hover { color: #e74c3c; } 
     
-    p.project-text { font-size: 1.15rem; line-height: 1.8; text-align: left; color: #242424; }
+    p.project-text { font-size: 1.15rem; line-height: 1.8; text-align: left; color: #444; }
     
-    /* Unified Quick Facts */
-    .quick-facts { background-color: #1A1A1A; padding: 25px 0; border-bottom: 4px solid #4CAF50; border-top: 4px solid #4CAF50;}
-    .fact-title { font-weight: 700; color: #4CAF50; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-    .fact-detail { font-weight: 500; font-size: 1.1rem; color: #E0E0E0; }
+    /* Sleek Quick Facts */
+    .quick-facts { background-color: #2c3e50; padding: 25px 0; border-top: 5px solid #e74c3c; border-bottom: 5px solid #3498db;}
+    .fact-title { font-weight: 700; color: #e74c3c; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    .fact-detail { font-weight: 500; font-size: 1.1rem; color: #ecf0f1; }
     
-    .contribution-header { color: #242424; font-weight: bold; margin-bottom: 15px; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 2.5rem; letter-spacing: 2px;}
+    .contribution-header { color: #2c3e50; font-weight: 900; margin-bottom: 15px; font-size: 2.2rem; letter-spacing: 1px; text-transform: uppercase;}
     
-    /* Unified Stone Panels */
-    .stone-panel {
-      background-color: #B0B0B0; 
+    /* Clean Tech Panels (Alternating Red/Blue borders in HTML) */
+    .clean-panel {
+      background-color: #ffffff; 
       padding: 35px; 
-      border: 4px solid #000;
-      border-radius: 15px 25px 10px 30px; 
-      box-shadow: 6px 6px 0px rgba(0,0,0,0.5);
-    }
-
-    /* Unified Rock Buttons */
-    .rock-btn-container {
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-        gap: 30px; 
-        flex-wrap: wrap;
-    }
-
-    .rock-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Rocky Road', 'Impact', sans-serif;
-      font-size: 1.8rem; 
-      color: #FFF !important; 
-      background-image: url('/assets/img/S_MenuButton.png');
-      background-size: 100% 100%;
-      width: 300px; 
-      height: 92px; 
-      background-color: transparent;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin: 0;
-      border: none;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: transform 0.2s ease, filter 0.2s ease;
-      flex-shrink: 0; 
-      text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
-    }
-    .rock-btn:hover {
-      transform: translateY(-3px) scale(1.05);
-      filter: brightness(1.15);
+      border-radius: 8px; 
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
   </style>
 </head>
 
 <body>
   <main>
-    <div class="navbar-section" style="background-color: #1A1A1A; padding: 10px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.5); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #4CAF50;">
+    <div class="navbar-section" style="background-color: #1a252f; padding: 10px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #3498db;">
       <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
         <div style="flex: 1; padding-left: 20px; display: flex; align-items: center;">
           <a href="index.html" style="display: flex;"><img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
@@ -103,12 +58,12 @@
       </div>
     </div>
 
-    <section class="section" style="background-color: #242424; padding: 80px 0 40px 0; text-align: center; border-bottom: 6px solid #4CAF50;">
+    <section class="section" style="background-color: #ffffff; padding: 80px 0 60px 0; text-align: center; border-bottom: 1px solid #e0e0e0;">
       <div class="container">
-        <h1 style="color: #4CAF50; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 5rem; margin: 0; letter-spacing: 4px; text-shadow: 3px 3px 0px #000;">SUPERCOLD</h1>
-        <h4 style="color: #E0E0E0; font-family: 'Rocky Road', 'Impact', sans-serif; margin-top: 10px; letter-spacing: 2px; text-shadow: 2px 2px 0px #000;">A Game Tech Project</h4>
+        <h1 style="color: #e74c3c; font-weight: 900; font-size: 5.5rem; margin: 0; letter-spacing: 6px;">SUPERCOLD</h1>
+        <h4 style="color: #3498db; font-weight: 700; margin-top: 10px; letter-spacing: 2px; text-transform: uppercase; font-size: 1.8rem;">A Game Tech Project</h4>
         
-        <p style="font-size: 1.4rem; color: #B0B0B0; font-style: italic; max-width: 800px; margin: 30px auto 0 auto; line-height: 1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+        <p style="font-size: 1.4rem; color: #555; font-weight: 400; max-width: 800px; margin: 30px auto 0 auto; line-height: 1.6;">
           SUPERCOLD is a short demo I created for Game Tech which took heavy inspiration from SUPERHOT.
         </p>
       </div>
@@ -118,22 +73,22 @@
       <div class="container">
         <div class="row" style="margin-bottom: 0;">
           <div class="col s6 m4"><span class="fact-title">Role</span><br><span class="fact-detail">Solo Developer</span></div>
-          <div class="col s6 m4"><span class="fact-title">Engine</span><br><span class="fact-detail">Unreal Engine</span></div>
+          <div class="col s6 m4"><span class="fact-title" style="color: #3498db;">Engine</span><br><span class="fact-detail">Unreal Engine</span></div>
           <div class="col s12 m4"><span class="fact-title">Timeline</span><br><span class="fact-detail">Game Tech Semester</span></div>
         </div>
       </div>
     </div>
 
-    <section class="section" style="padding: 80px 0 40px 0; background-color: #242424;">
+    <section class="section" style="padding: 80px 0 40px 0; background-color: #f4f6f7;">
       <div class="container">
-        <h3 class="center-align" style="font-family: 'Rocky Road', 'Impact', sans-serif; color: #E0E0E0; margin-bottom: 50px; font-size: 4.5rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">Mechanics & Tech</h3>
+        <h3 class="center-align" style="color: #2c3e50; font-weight: 900; margin-bottom: 60px; font-size: 3.5rem; letter-spacing: 2px; text-transform: uppercase;">Mechanics & Tech</h3>
 
         <div class="row" style="margin-bottom: 60px; display: flex; flex-wrap: wrap; align-items: center;">
           <div class="col s12 m5 center-align" style="padding-top: 20px;">
-            <img src="/assets/img/SC1.gif" alt="Animations Demo" class="responsive-img hoverable materialboxed" style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8);">
+            <img src="/assets/img/SC1.gif" alt="Animations Demo" class="responsive-img hoverable materialboxed" style="border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.15);">
           </div>
           <div class="col s12 m7" style="padding: 0 20px;">
-            <div class="stone-panel" style="background-color: #A4B59D;">
+            <div class="clean-panel" style="border-left: 6px solid #e74c3c;">
                 <h5 class="contribution-header">Timelines & Animations</h5>
                 <p class="project-text">In the development of SUPERCOLD, one of our requirements was to incorporate timelines and animations. I took this one step further by introducing the player's model running while being fired at, while an emergency siren is sounding to set the atmosphere.</p>
             </div>
@@ -142,10 +97,10 @@
         
         <div class="row" style="margin-bottom: 60px; display: flex; flex-wrap: wrap; align-items: center; flex-direction: row-reverse;">
           <div class="col s12 m5 center-align" style="padding-top: 20px;">
-             <img src="/assets/img/SC2.gif" alt="Pathfinding Demo" class="responsive-img hoverable materialboxed" style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8); width: 100%;">
+             <img src="/assets/img/SC2.gif" alt="Pathfinding Demo" class="responsive-img hoverable materialboxed" style="border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); width: 100%;">
           </div>
           <div class="col s12 m7" style="padding: 0 20px;">
-            <div class="stone-panel" style="background-color: #B59E9A;">
+            <div class="clean-panel" style="border-left: 6px solid #3498db;">
               <h5 class="contribution-header">Dynamic Pathfinding</h5>
               <p class="project-text">An essential requirement was to incorporate pathfinding. This is an incredibly important tool, and I am glad that I learned how to use it and apply it to different characters in the same scene to solve issues that occurred during active gameplay. Also, fun cameo from M-O!</p>
             </div>
@@ -154,10 +109,10 @@
 
         <div class="row" style="margin-bottom: 60px; display: flex; flex-wrap: wrap; align-items: center;">
           <div class="col s12 m5 center-align" style="padding-top: 20px;">
-            <img src="/assets/img/SC3.gif" alt="Triggers Demo" class="responsive-img hoverable materialboxed" style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8);">
+            <img src="/assets/img/SC3.gif" alt="Triggers Demo" class="responsive-img hoverable materialboxed" style="border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.15);">
           </div>
           <div class="col s12 m7" style="padding: 0 20px;">
-            <div class="stone-panel" style="background-color: #9AA6B5;">
+            <div class="clean-panel" style="border-left: 6px solid #e74c3c;">
                 <h5 class="contribution-header">Level Triggers</h5>
                 <p class="project-text">An additional requirement was to incorporate triggers which would lead to the timelines. This trigger had remained throughout my development, and I never thought about changing it. I figured, "Oh, the grate is a perfect spot for a trigger, can't be missed."</p>
                 <p class="project-text">I was very wrong once I brought the game to testing, and realized that I had to make the trigger more obvious and impossible to miss without fail. Lesson learned in UI/UX signposting!</p>
@@ -168,36 +123,45 @@
       </div>
     </section>
 
-    <section class="section" style="padding: 80px 0; background-color: #384230; border-top: 6px solid #1A1A1A;">
+    <section class="section" style="padding: 80px 0; background-color: #ffffff; border-top: 1px solid #e0e0e0;">
       <div class="container center-align">
-        <h3 style="font-family: 'Rocky Road', 'Impact', sans-serif; color: #FFF; margin-bottom: 40px; font-size: 4rem; letter-spacing: 2px; text-shadow: 3px 3px 0px #000;">The "Supercold" Swap</h3>
+        <h3 style="color: #2c3e50; font-weight: 900; margin-bottom: 50px; font-size: 3.5rem; letter-spacing: 2px; text-transform: uppercase;">The "Supercold" Swap</h3>
         
         <div class="row" style="margin-bottom: 40px;">
           <div class="col s12 m6 center-align" style="margin-bottom: 20px;">
-            <img src="/assets/img/SC4.gif" alt="Swap Mechanic" class="responsive-img hoverable materialboxed" style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8); width: 100%;">
+            <img src="/assets/img/SC4.gif" alt="Swap Mechanic" class="responsive-img hoverable materialboxed" style="border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); width: 100%;">
           </div>
           <div class="col s12 m6 center-align" style="margin-bottom: 20px;">
-            <img src="/assets/img/SC5.gif" alt="Rocket Vantage Point" class="responsive-img hoverable materialboxed" style="border-radius: 12px; border: 4px solid #000; box-shadow: 6px 6px 0px rgba(0,0,0,0.8); width: 100%;">
+            <img src="/assets/img/SC5.gif" alt="Rocket Vantage Point" class="responsive-img hoverable materialboxed" style="border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); width: 100%;">
           </div>
         </div>
 
         <div class="row">
           <div class="col s12 m10 offset-m1">
-            <div class="stone-panel" style="background-color: #C0B7A1; text-align: left;">
+            <div class="clean-panel" style="border-top: 6px solid #3498db; text-align: left;">
                 <p class="project-text">Finally, the reason why this game is titled SUPERCOLD. In the game I created a mechanic where the player can swap places with the enemy. While they swap places, time is slowed down for a short duration which gives the player the upper hand in attacking and dodging enemy fire (which may be their own). In addition, the player heals a slight bit of damage just to make it easier.</p>
-                <p class="project-text">Lastly, a great strategic advantage of the swap mechanic is that it allows the player to gain vantage points. In the current build, the player must teleport up to the enemy in order to hit the button to win. It is an oversight as I watched many players fall and kill the final enemy which was the original target. Due to crunch, I had to opt for the button, but in a future build, I would absolutely refine the script interactions to allow the enemy kill to be the true win state!</p>
+                <p class="project-text" style="margin-top: 15px;">Lastly, a great strategic advantage of the swap mechanic is that it allows the player to gain vantage points. In the current build, the player must teleport up to the enemy in order to hit the button to win. It is an oversight as I watched many players fall and kill the final enemy which was the original target. Due to crunch, I had to opt for the button, but in a future build, I would absolutely refine the script interactions to allow the enemy kill to be the true win state!</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background-color: #1A1A1A; padding: 60px 0; text-align: center; border-top: 4px solid #4CAF50;">
-      <h4 class="white-text" style="font-weight: bold; margin-bottom: 40px; font-family: 'Rocky Road', 'Impact', sans-serif; font-size: 3.5rem; letter-spacing: 2px;">Get In Touch</h4>
-      <div class="rock-btn-container" style="max-width: 1050px; margin: 0 auto;">
-        <a href="mailto:steveneb0212@gmail.com" target="_blank" class="rock-btn">Email</a>
-        <a href="http://github.com/steveshack" target="_blank" class="rock-btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="rock-btn">LinkedIn</a>
+    <section id="contact" class="section scrollspy" style="background-image: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%); padding: 80px 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="width: 100%; text-align: center; padding: 0 20px;">
+        <h3 class="white-text" style="margin: 0 auto 40px auto; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Get In Touch</h3>
+        
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 800px;">
+          <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #e74c3c; color: white; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
+            <i class="fa fa-envelope" style="font-size: 1.2rem; margin: 0;"></i> steveneb0212@gmail.com
+          </a>
+          <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #333; color: white; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
+            <i class="fa fa-github" style="font-size: 1.2rem; margin: 0;"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #3498db; color: white; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
+            <i class="fa fa-linkedin" style="font-size: 1.2rem; margin: 0;"></i> LinkedIn
+          </a>
+        </div>
       </div>
     </section>
 
