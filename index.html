@@ -1,21 +1,28 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Materialize - Compiled and minified CSS-->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <!-- Font Awesome Icon - CSS-->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <title>Steven Bruns | Game Designer</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,15 +32,45 @@
     gtag('config', 'UA-126939217-2');
   </script>
 
+  <!-- Open Graph-->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="Steven Bruns | Game Designer" />
+  <meta property="og:description" content="Software Developer" />
+  <meta property="og:url" content="https://steveshack.github.io/" />
+  <meta property="og:site_name" content="Steven Bruns | Game Designer" />
+  <meta property="article:publisher" content="https://steveshack.github.io/" />
+  <meta property="og:image" content="https://steveshack.github.io/examples/preview.JPG" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@stevenbruns10" />
+  <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
+  <meta name="twitter:description" content="Game Designer" />
+  <meta name="twitter:url" content="https://twitter.com/varad_bhogayata" />
   <meta name="author" content="Steven Bruns" />
   <meta name="description" content="Game Designer with a passion for creating fun video games." />
-  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/img/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  <!-- Google Site Verification for indexing -->
+  <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
+
   <style>
-    /* Smooth scrolling for anchor links */
-    html {
-        scroll-behavior: smooth;
-    }
 
     main {
       padding-left: 0 !important;
@@ -43,68 +80,42 @@
       display: none !important;
     }
     
-    /* -----------------------------------------
-       FIXED NAVBAR STYLING 
-       ----------------------------------------- */
-    .navbar-section {
-      background-color: #1a252f; 
-      border-bottom: 3px solid #2980b9;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .navbar-section .row {
+    /* Remove extra padding or margin */
+    .navbar-section, .navbar-section .container, .navbar-section .row {
       margin: 0;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center; /* This perfectly centers the logo and links vertically */
-      justify-content: space-between;
+      padding: 10px;
+      border: none; /* Ensure no borders around the navbar */
     }
 
-    .navbar-section .nav-link {
-        color: #ecf0f1;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: color 0.3s ease;
+    /* Make sure logo and YouTube button can expand */
+    .navbar-section .logo,
+    .navbar-section .youtube-icon {
+      margin: 0;
+      padding: 0;
+      width: 100%; /* Ensure they take up full width */
+      display: flex; /* Allow them to align properly */
     }
 
-    .navbar-section .nav-link:hover {
-        color: #3498db;
+    /* Fix alignment of logo and YouTube icon */
+    .navbar-section .logo {
+      justify-content: flex-start; /* Align logo to the left */
+      align-items: center;
     }
 
-    /* -----------------------------------------
-       CARD HOVER EFFECTS (The TLC)
-       ----------------------------------------- */
-    .hover-lift {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    .hover-lift:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.2) !important;
+    .navbar-section .youtube-icon {
+      justify-content: flex-end; /* Align YouTube button to the right */
+      align-items: center;
     }
 
-    /* Slideshow overlay for readability */
-    .background-slideshow {
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        transition: background-image 1s ease-in-out;
+    /* Make sure the navbar doesn't have any grid layout */
+    .navbar-section .row {
+      display: flex; /* Remove grid structure */
+      justify-content: space-between; /* Make sure elements are spaced out correctly */
     }
-    .background-slideshow::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-color: rgba(26, 37, 47, 0.75); /* Dark overlay */
-        z-index: 1;
-    }
-    .hero-content {
-        position: relative;
-        z-index: 2;
+
+    /* Remove any border or unwanted line under the logo/YouTube container */
+    .navbar-section .row, .navbar-section .logo, .navbar-section .youtube-icon {
+      border-bottom: none;
     }
   </style>
 </head>
@@ -115,41 +126,38 @@
   </noscript>
   
   <main>
-    <div class="navbar-section">
-      <div class="row">
-        <div style="flex: 1; display: flex; justify-content: flex-start;">
-          <a href="#intro" style="display: flex; align-items: center;">
-            <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 55px; border-radius: 4px;">
-          </a>
+    <div class="navbar-section" style="background-color: #1a252f; border-bottom: 3px solid #2980b9;">
+      <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
+        <div style="flex: 1; padding-left: 20px;">
+          <a href="#intro">
+          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px;"></a>
         </div>
         <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px;">
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#education" class="nav-link">Education</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#projects" class="nav-link" style="font-weight: 500;">Projects</a>
+          <a href="#about" class="nav-link" style="font-weight: 500;">About</a>
+          <a href="#skills" class="nav-link" style="font-weight: 500;">Skills</a>
+          <a href="#experience" class="nav-link" style="font-weight: 500;">Experience</a>
+          <a href="#education" class="nav-link" style="font-weight: 500;">Education</a>
+          <a href="#contact" class="nav-link" style="font-weight: 500;">Contact</a>
         </div>
-        <div style="flex: 1; display: flex; justify-content: flex-end;">
-          <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex; align-items: center;">
-            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 40px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 45px; margin-top: 5px;">
           </a>
         </div>
       </div>
     </div>
 
-    <section id="intro" class="section scrollspy background-slideshow" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-        <div class="hero-content">
-            <h1 class="white-text" style="font-weight: 300; font-size: 4rem; margin: 0 auto; letter-spacing: 2px;">Steven Bruns</h1>
-            <h4 style="color: #3498db; font-weight: 400; font-size: 1.8rem; margin: 15px auto 0 auto;">I am a <span class="typing"></span></h4>
-            
-            <div class="social" style="margin: 30px auto 0 auto; display: flex; justify-content: center;">
-              <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank">
-                <button class="icon-btn hoverable" style="background-color: #0077b5; border-radius: 5px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border: none; padding: 0; transition: background-color 0.3s;">
-                  <i class="fa fa-linkedin white-text" style="font-size: 24px; margin: 0;"></i>
-                </button>
-              </a>
-            </div>
+    <section id="intro" class="section scrollspy" style="background-image: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); padding: 20px 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h1 class="white-text" style="font-weight: 300; font-size: 3rem; margin: 0 auto;">Steven Bruns</h1>
+        <h4 style="color: #bdc3c7; font-weight: 300; font-size: 1.2rem; margin: 5px auto 0 auto;">Let's Make Games</h4>
+        
+        <div class="social" style="margin: 10px auto 0 auto; display: flex; justify-content: center;">
+          <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank">
+            <button class="icon-btn hoverable" style="background-color: #0077b5; border-radius: 5px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: none; padding: 0;">
+              <i class="fa fa-linkedin white-text" style="font-size: 20px; margin: 0;"></i>
+            </button>
+          </a>
         </div>
     </section>
 
