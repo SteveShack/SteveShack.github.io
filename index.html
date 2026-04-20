@@ -1,28 +1,21 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Materialize - Compiled and minified CSS--> 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS-->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <title>Steven Bruns | Game Designer</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -32,7 +25,6 @@
     gtag('config', 'UA-126939217-2');
   </script>
 
-  <!-- Open Graph-->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Steven Bruns | Game Designer" />
@@ -41,7 +33,6 @@
   <meta property="og:site_name" content="Steven Bruns | Game Designer" />
   <meta property="article:publisher" content="https://steveshack.github.io/" />
   <meta property="og:image" content="https://steveshack.github.io/examples/preview.JPG" />
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@stevenbruns10" />
   <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
@@ -49,6 +40,7 @@
   <meta name="twitter:url" content="https://twitter.com/varad_bhogayata" />
   <meta name="author" content="Steven Bruns" />
   <meta name="description" content="Game Designer with a passion for creating fun video games." />
+  
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
@@ -67,57 +59,47 @@
   <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
   <meta name="robots" content="index, follow" />
-  <!-- Google Site Verification for indexing -->
   <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
 
   <style>
+    /* Smooth scrolling for anchor links */
+    html { scroll-behavior: smooth; }
 
-    main {
-      padding-left: 0 !important;
+    main { padding-left: 0 !important; }
+    
+    .hide-on-large.only.trigger { display: none !important; }
+    
+    /* Fixed Navbar Styling */
+    .navbar-section {
+      background-color: #1a252f; 
+      border-bottom: 3px solid #2980b9;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     
-    .hide-on-large.only.trigger {
-      display: none !important;
-    }
-    
-    /* Remove extra padding or margin */
-    .navbar-section, .navbar-section .container, .navbar-section .row {
-      margin: 0;
-      padding: 10px;
-      border: none; /* Ensure no borders around the navbar */
-    }
-
-    /* Make sure logo and YouTube button can expand */
-    .navbar-section .logo,
-    .navbar-section .youtube-icon {
-      margin: 0;
-      padding: 0;
-      width: 100%; /* Ensure they take up full width */
-      display: flex; /* Allow them to align properly */
-    }
-
-    /* Fix alignment of logo and YouTube icon */
-    .navbar-section .logo {
-      justify-content: flex-start; /* Align logo to the left */
-      align-items: center;
-    }
-
-    .navbar-section .youtube-icon {
-      justify-content: flex-end; /* Align YouTube button to the right */
-      align-items: center;
-    }
-
-    /* Make sure the navbar doesn't have any grid layout */
     .navbar-section .row {
-      display: flex; /* Remove grid structure */
-      justify-content: space-between; /* Make sure elements are spaced out correctly */
+      margin: 0;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center; /* Perfectly centers logo and links vertically */
+      justify-content: space-between;
     }
 
-    /* Remove any border or unwanted line under the logo/YouTube container */
-    .navbar-section .row, .navbar-section .logo, .navbar-section .youtube-icon {
-      border-bottom: none;
+    .navbar-section .nav-link {
+        color: #ecf0f1;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
     }
 
+    .navbar-section .nav-link:hover {
+        color: #3498db;
+    }
+
+    /* Card Hover Effects */
     .hover-lift {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border-radius: 8px;
@@ -136,36 +118,37 @@
   </noscript>
   
   <main>
-    <div class="navbar-section" style="background-color: #1a252f; border-bottom: 3px solid #2980b9;">
-      <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
-        <div style="flex: 1; padding-left: 20px;">
-          <a href="#intro">
-          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px;"></a>
+    <div class="navbar-section">
+      <div class="row">
+        <div style="flex: 1; display: flex; justify-content: flex-start;">
+          <a href="#intro" style="display: flex; align-items: center;">
+            <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 55px; border-radius: 4px;">
+          </a>
         </div>
         <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px;">
-          <a href="#projects" class="nav-link" style="font-weight: 500;">Projects</a>
-          <a href="#about" class="nav-link" style="font-weight: 500;">About</a>
-          <a href="#skills" class="nav-link" style="font-weight: 500;">Skills</a>
-          <a href="#experience" class="nav-link" style="font-weight: 500;">Experience</a>
-          <a href="#education" class="nav-link" style="font-weight: 500;">Education</a>
-          <a href="#contact" class="nav-link" style="font-weight: 500;">Contact</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
-          <a href="https://youtube.com/SuperGamingCo" target="_blank">
-            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 45px; margin-top: 5px;">
+        <div style="flex: 1; display: flex; justify-content: flex-end;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex; align-items: center;">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 40px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
           </a>
         </div>
       </div>
     </div>
 
-    <section id="intro" class="section scrollspy" style="background-image: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); padding: 20px 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-        <h1 class="white-text" style="font-weight: 300; font-size: 3rem; margin: 0 auto;">Steven Bruns</h1>
-        <h4 style="color: #bdc3c7; font-weight: 300; font-size: 1.2rem; margin: 5px auto 0 auto;">Let's Make Games</h4>
+    <section id="intro" class="section scrollspy" style="background-image: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h1 class="white-text" style="font-weight: 300; font-size: 4rem; margin: 0 auto; letter-spacing: 2px;">Steven Bruns</h1>
+        <h4 style="color: #3498db; font-weight: 400; font-size: 1.8rem; margin: 15px auto 0 auto;">I am a <span class="typing"></span></h4>
         
-        <div class="social" style="margin: 10px auto 0 auto; display: flex; justify-content: center;">
+        <div class="social" style="margin: 30px auto 0 auto; display: flex; justify-content: center;">
           <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank">
-            <button class="icon-btn hoverable" style="background-color: #0077b5; border-radius: 5px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: none; padding: 0;">
-              <i class="fa fa-linkedin white-text" style="font-size: 20px; margin: 0;"></i>
+            <button class="icon-btn hoverable" style="background-color: #0077b5; border-radius: 5px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border: none; padding: 0; transition: background-color 0.3s;">
+              <i class="fa fa-linkedin white-text" style="font-size: 24px; margin: 0;"></i>
             </button>
           </a>
         </div>
@@ -188,25 +171,14 @@
           
           <div class="col s12 m4">
             <div class="hover-lift">
-                <a href="supercold.html">
-                  <img alt="SUPERCOLD" src="/assets/img/MO.gif" class="responsive-img" style="width: 100%; display: block;" />
+                <a href="picksomeaxe.html">
+                  <img alt="Pick some Axe" src="/assets/img/PSAMain.jpg" class="responsive-img" style="width: 100%; display: block;" />
                 </a>
             </div>
-            <h6 style="margin-top: 20px; color: #34495e; font-weight: bold; font-size: 1.2rem;">SUPERCOLD</h6>
+            <h6 style="margin-top: 20px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Pick some Axe</h6>
           </div>
-          
-          <div class="col s12 m4">
-            <div class="hover-lift">
-                <a href="chop-off.html">
-                  <img alt="Chop-Off" src="/assets/img/Chop-Off.png" class="responsive-img" style="width: 100%; display: block;" />
-                </a>
-            </div>
-            <h6 style="margin-top: 20px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Chop-Off</h6>
-          </div>
-        </div>
 
-        <div class="row" style="margin-top: 50px;">
-          <div class="col s12 m4 offset-m2">
+          <div class="col s12 m4">
             <div class="hover-lift">
                 <a href="towerdefensefps.html">
                   <img alt="Tower Defense FPS" src="/assets/img/TowerDefensePNG.png" class="responsive-img" style="width: 100%; display: block;" />
@@ -214,14 +186,25 @@
             </div>
             <h6 style="margin-top: 20px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Tower Defense FPS</h6>
           </div>
+        </div>
+
+        <div class="row" style="margin-top: 50px;">
+          <div class="col s12 m4 offset-m2">
+            <div class="hover-lift">
+                <a href="supercold.html">
+                  <img alt="SUPERCOLD" src="/assets/img/MO.gif" class="responsive-img" style="width: 100%; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; color: #34495e; font-weight: bold; font-size: 1.2rem;">SUPERCOLD</h6>
+          </div>
 
           <div class="col s12 m4">
             <div class="hover-lift">
-                <a href="picksomeaxe.html">
-                  <img alt="Pick some Axe" src="/assets/img/PickSomeLogo.png" class="responsive-img" style="width: 100%; display: block;" />
+                <a href="chop-off.html">
+                  <img alt="Chop-Off" src="/assets/img/Chop-Off.png" class="responsive-img" style="width: 100%; display: block;" />
                 </a>
             </div>
-            <h6 style="margin-top: 20px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Pick some Axe</h6>
+            <h6 style="margin-top: 20px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Chop-Off</h6>
           </div>
         </div>
 
@@ -437,29 +420,6 @@
       });
     });
   </script>
-
-  <script>
-  const images = [
-    "/assets/img/SLogo.jpg", 
-    "/assets/img/ASqurrelyStory.png",
-    "/assets/img/TOWER.png"
-  ];
-
-  let index = 0;
-  const slideshow = document.querySelector(".background-slideshow");
-
-  function changeBackground() {
-    if(slideshow) {
-        slideshow.style.backgroundImage = `url('${images[index]}')`;
-        index = (index + 1) % images.length;
-    }
-  }
-
-  // Initialize and repeat every 5 seconds
-  changeBackground();
-  setInterval(changeBackground, 5000);
-</script>
-  
 </body>
 
 </html>
