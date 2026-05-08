@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <title>Portfolio | Steven Bruns</title>
+
+  <meta name="author" content="Steven Bruns" />
+  <meta name="description" content="Complete portfolio and project archive for Game Designer Steven Bruns." />
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
+
+  <style>
+    /* Smooth scrolling for anchor links */
+    html { scroll-behavior: smooth; }
+    main { padding-left: 0 !important; }
+    .hide-on-large.only.trigger { display: none !important; }
+    
+    /* Fixed Navbar Styling */
+    .navbar-section {
+      background-color: #1a252f; 
+      border-bottom: 3px solid #2980b9;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .navbar-section .row {
+      margin: 0;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center; 
+      justify-content: space-between;
+    }
+
+    .navbar-section .nav-link {
+        color: #ecf0f1;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-section .nav-link:hover, .navbar-section .nav-link.active {
+        color: #3498db;
+    }
+
+    /* Navbar Mega Menu Dropdown */
+    .dropdown-container {
+        position: relative;
+        display: inline-block;
+        padding: 15px 0;
+    }
+    
+    .projects-dropdown {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1a252f;
+        width: 850px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 20px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+        border-top: 3px solid #2980b9;
+        transition: visibility 0s, opacity 0.3s ease;
+        z-index: 2000;
+    }
+
+    .dropdown-container:hover .projects-dropdown {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .drop-item {
+        flex: 1;
+        text-align: center;
+        transition: transform 0.2s ease;
+        text-decoration: none;
+    }
+    
+    .drop-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .drop-img {
+        width: 100%;
+        aspect-ratio: 1 / 1; 
+        object-fit: cover;
+        border-radius: 6px;
+        border: 2px solid transparent;
+        transition: border 0.2s ease;
+    }
+    
+    .drop-item:hover .drop-img {
+        border-color: #3498db;
+    }
+
+    .drop-text {
+        display: block;
+        color: #ecf0f1;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 8px;
+        text-transform: uppercase;
+    }
+
+    /* Hero Banner for Portfolio */
+    .portfolio-banner {
+        background-image: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+        padding: 80px 0; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
+        border-bottom: 4px solid #2980b9;
+    }
+
+    /* Card Hover Effects */
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #ffffff;
+        display: block;
+    }
+    .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.2) !important;
+    }
+
+    .tool-text {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    /* Grid layout for un-cropped cards */
+    .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+    
+    .project-card-wrapper {
+        flex: 1 1 300px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  
+  <main>
+    <div class="navbar-section">
+      <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
+        <div style="flex: 1; padding-left: 20px;">
+          <a href="index.html">
+          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px;"></a>
+        </div>
+        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center;">
+          <a href="index.html#about" class="nav-link" style="font-weight: 500;">About</a>
+          <a href="index.html#skills" class="nav-link" style="font-weight: 500;">Skills</a>
+          
+          <div class="dropdown-container">
+              <a href="index.html#projects" class="nav-link active" style="font-weight: 500;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+              <div class="projects-dropdown">
+                  <a href="squirrely-story.html" class="drop-item">
+                      <img src="/assets/img/ASquirrelyStory.png" class="drop-img">
+                      <span class="drop-text">A Squirrely Story</span>
+                  </a>
+                  <a href="picksomeaxe.html" class="drop-item">
+                      <img src="/assets/img/PickSomeLogo.png" class="drop-img">
+                      <span class="drop-text">Pick Some Axe</span>
+                  </a>
+                  <a href="towerdefensefps.html" class="drop-item">
+                      <img src="/assets/img/TowerDefensePNG.png" class="drop-img">
+                      <span class="drop-text">TD FPS</span>
+                  </a>
+                  <a href="supercold.html" class="drop-item">
+                      <img src="/assets/img/MO.gif" class="drop-img">
+                      <span class="drop-text">SUPERCOLD</span>
+                  </a>
+                  <a href="chop-off.html" class="drop-item">
+                      <img src="/assets/img/Chop-Off.png" class="drop-img">
+                      <span class="drop-text">Chop-Off</span>
+                  </a>
+              </div>
+          </div>
+
+          <a href="resume.html" class="nav-link" style="font-weight: 500;">Resume</a>
+          <a href="#contact" class="nav-link" style="font-weight: 500;">Contact</a>
+        </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 45px; margin-top: 5px;">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="portfolio-banner">
+        <h1 class="white-text" style="font-weight: 700; font-size: 3.5rem; margin: 0 auto;">Complete Portfolio</h1>
+        <h4 style="color: #bdc3c7; font-weight: 400; font-size: 1.2rem; margin: 10px auto 0 auto;">A comprehensive archive of my games, design, and QA work</h4>
+    </section>
+
+    <section class="section scrollspy" style="padding: 80px 0; background-color: #ffffff;">
+      <div class="container center-align">
+        <div class="center-align">
+            <h3 class="page-title" style="margin: 0 auto 50px auto; color: #2c3e50; font-weight: bold; border-bottom: 3px solid #2980b9; display: inline-block; padding-bottom: 10px;">Featured Games</h3>
+        </div>
+        
+        <div class="project-grid">
+          <div class="project-card-wrapper">
+            <div class="hover-lift">
+                <a href="squirrely-story.html">
+                  <img alt="A Squirrely Story" src="/assets/img/ASquirrelyStory.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">A Squirrely Story</h6>
+            <p class="tool-text"><i class="fa fa-wrench" style="margin-right: 5px;"></i>UE5, Blueprints, SVN, Jira</p>
+          </div>
+          
+          <div class="project-card-wrapper">
+            <div class="hover-lift">
+                <a href="picksomeaxe.html">
+                  <img alt="Pick some Axe" src="/assets/img/PickSomeLogo.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Pick some Axe</h6>
+            <p class="tool-text"><i class="fa fa-wrench" style="margin-right: 5px;"></i>Unity, C#, FL Studio, Git</p>
+          </div>
+
+          <div class="project-card-wrapper">
+            <div class="hover-lift">
+                <a href="towerdefensefps.html">
+                  <img alt="Tower Defense FPS" src="/assets/img/TowerDefensePNG.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Tower Defense FPS</h6>
+            <p class="tool-text"><i class="fa fa-wrench" style="margin-right: 5px;"></i>UE5, Blueprints, Blockbench</p>
+          </div>
+        </div>
+
+        <div class="project-grid" style="margin-top: 50px;">
+          <div class="project-card-wrapper">
+            <div class="hover-lift">
+                <a href="supercold.html">
+                  <img alt="SUPERCOLD" src="/assets/img/MO.gif" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">SUPERCOLD</h6>
+            <p class="tool-text"><i class="fa fa-wrench" style="margin-right: 5px;"></i>Unity, C#</p>
+          </div>
+
+          <div class="project-card-wrapper">
+            <div class="hover-lift">
+                <a href="chop-off.html">
+                  <img alt="Chop-Off" src="/assets/img/Chop-Off.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Chop-Off</h6>
+            <p class="tool-text"><i class="fa fa-wrench" style="margin-right: 5px;"></i>Unity, UI, Docs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section scrollspy" style="padding: 80px 0; background-color: #eef2f5;">
+      <div class="container center-align">
+        <div class="center-align">
+            <h3 class="page-title" style="margin: 0 auto 50px auto; color: #2c3e50; font-weight: bold; border-bottom: 3px solid #2980b9; display: inline-block; padding-bottom: 10px;">Other Disciplines</h3>
+        </div>
+        
+        <div class="project-grid">
+          <div class="project-card-wrapper">
+            <div class="hover-lift" style="border: 2px solid #dde4e9;">
+                <a href="level-design.html">
+                  <img alt="Level Design" src="/assets/img/PrisonBreak.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Level Design</h6>
+            <p class="tool-text">Blockouts, Lighting, Pacing</p>
+          </div>
+          
+          <div class="project-card-wrapper">
+            <div class="hover-lift" style="border: 2px solid #dde4e9;">
+                <a href="maya-work.html">
+                   <img alt="Maya Work" src="/assets/img/Yosh2.jpg" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Maya Work</h6>
+            <p class="tool-text">3D Modeling, UV Mapping</p>
+          </div>
+          
+          <div class="project-card-wrapper">
+            <div class="hover-lift" style="border: 2px solid #dde4e9;">
+                <a href="qa-work.html">
+                   <img alt="QA Work" src="/assets/img/QA.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">QA Work</h6>
+            <p class="tool-text">Testing, Bug Tracking, Documentation</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="section scrollspy" style="background-image: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%); padding: 80px 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="width: 100%; text-align: center; padding: 0 20px;">
+        <h3 class="page-title white-text" style="margin: 0 auto 20px auto; font-weight: bold;">Get In Touch</h3>
+        <p class="white-text" style="font-size: 1.2rem; margin: 0 auto 40px auto; font-weight: 300; max-width: 600px;">
+          I'm always open to discussing new projects and creative opportunities.
+        </p>
+        
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 800px;">
+          <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #2980b9; color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s;">
+            <i class="fa fa-envelope" style="font-size: 1.2rem; margin: 0;"></i> Email
+          </a>
+          <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #333; color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s;">
+            <i class="fa fa-github" style="font-size: 1.2rem; margin: 0;"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #0077b5; color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s;">
+            <i class="fa fa-linkedin" style="font-size: 1.2rem; margin: 0;"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".scrollspy").scrollSpy();
+      $(".button-collapse").sideNav({
+        menuWidth: 190, 
+        edge: "left", 
+        closeOnClick: true 
+      });
+    });
+  </script>
+</body>
+</html>
