@@ -21,52 +21,32 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-126939217-2');
   </script>
 
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Steven Bruns | Game Designer" />
-  <meta property="og:description" content="Software Developer" />
+  <meta property="og:description" content="Game Designer with a passion for creating fun video games." />
   <meta property="og:url" content="https://steveshack.github.io/" />
   <meta property="og:site_name" content="Steven Bruns | Game Designer" />
-  <meta property="article:publisher" content="https://steveshack.github.io/" />
-  <meta property="og:image" content="https://steveshack.github.io/examples/preview.JPG" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@stevenbruns10" />
-  <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
-  <meta name="twitter:description" content="Game Designer" />
-  <meta name="twitter:url" content="https://twitter.com/varad_bhogayata" />
   <meta name="author" content="Steven Bruns" />
-  <meta name="description" content="Game Designer with a passion for creating fun video games." />
   
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
   <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
   <link rel="manifest" href="/assets/img/favicon/manifest.json" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
-  <meta name="robots" content="index, follow" />
-  <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
 
   <style>
     /* Smooth scrolling for anchor links */
     html { scroll-behavior: smooth; }
-
     main { padding-left: 0 !important; }
-    
     .hide-on-large.only.trigger { display: none !important; }
     
     /* Fixed Navbar Styling */
@@ -87,19 +67,40 @@
       justify-content: space-between;
     }
 
+    /* Animated Blue Underline for Nav Links */
     .navbar-section .nav-link {
         color: #ecf0f1;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 1px;
         transition: color 0.3s ease;
+        position: relative;
+        padding-bottom: 6px; 
     }
 
-    .navbar-section .nav-link:hover {
+    .navbar-section .nav-link:hover, .navbar-section .nav-link.active {
         color: #3498db;
     }
 
-    /* Updated Navbar Mega Menu Dropdown (4x2 Grid) */
+    .navbar-section .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 50%;
+        background-color: #3498db;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    .navbar-section .nav-link:hover::after, 
+    .navbar-section .nav-link.active::after {
+        width: 100%;
+    }
+
+    /* Navbar Mega Menu Dropdown (Updated to 5 Columns) */
     .dropdown-container {
         position: relative;
         display: inline-block;
@@ -114,10 +115,10 @@
         left: 50%;
         transform: translateX(-50%);
         background-color: #1a252f;
-        width: 800px;
+        width: 850px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
         padding: 25px;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 12px 30px rgba(0,0,0,0.6);
@@ -143,7 +144,7 @@
 
     .drop-img {
         width: 100%;
-        aspect-ratio: 16 / 9; /* Back to a 16:9 ratio so all 8 fit nicely in the grid without being too tall */
+        aspect-ratio: 1 / 1; 
         object-fit: cover;
         border-radius: 6px;
         border: 2px solid transparent;
@@ -161,6 +162,15 @@
         font-weight: 600;
         margin-top: 8px;
         text-transform: uppercase;
+    }
+
+    /* Global Square Image Lock */
+    .square-img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
     }
 
     /* Cinematic Hero Banner Styles */
@@ -223,6 +233,20 @@
         font-weight: 500;
         margin-top: 5px;
     }
+
+    .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+    
+    .project-card-wrapper {
+        flex: 1 1 300px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
   </style>
 </head>
 
@@ -232,18 +256,18 @@
   </noscript>
   
   <main>
-    <div class="navbar-section" style="background-color: #1a252f; border-bottom: 3px solid #2980b9;">
+    <div class="navbar-section">
       <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
         <div style="flex: 1; padding-left: 20px;">
           <a href="#intro">
           <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px;"></a>
         </div>
         <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center;">
-          <a href="#about" class="nav-link" style="font-weight: 500;">About</a>
-          <a href="#skills" class="nav-link" style="font-weight: 500;">Skills</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
           
           <div class="dropdown-container">
-              <a href="#projects" class="nav-link" style="font-weight: 500;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+              <a href="#projects" class="nav-link" style="cursor: pointer;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
               <div class="projects-dropdown">
                   <a href="squirrely-story.html" class="drop-item">
                       <img src="/assets/img/ASquirrelyStory.png" class="drop-img">
@@ -265,23 +289,12 @@
                       <img src="/assets/img/Chop-Off.png" class="drop-img">
                       <span class="drop-text">Chop-Off</span>
                   </a>
-                  <a href="level-design.html" class="drop-item">
-                      <img src="/assets/img/PrisonBreak.png" class="drop-img">
-                      <span class="drop-text">Level Design</span>
-                  </a>
-                  <a href="maya-work.html" class="drop-item">
-                      <img src="/assets/img/Yosh2.jpg" class="drop-img">
-                      <span class="drop-text">Maya Work</span>
-                  </a>
-                  <a href="qa-work.html" class="drop-item">
-                      <img src="/assets/img/QA.png" class="drop-img">
-                      <span class="drop-text">QA Work</span>
-                  </a>
               </div>
           </div>
 
-          <a href="resume.html" class="nav-link" style="font-weight: 500;">Resume</a>
-          <a href="#contact" class="nav-link" style="font-weight: 500;">Contact</a>
+          <a href="#other-work" class="nav-link">Other Work</a>
+          <a href="resume.html" class="nav-link">Resume</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
         <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
           <a href="https://youtube.com/SuperGamingCo" target="_blank">
@@ -376,7 +389,7 @@
           <div class="col s12 m4">
             <div class="hover-lift">
                 <a href="squirrely-story.html">
-                  <img alt="A Squirrely Story" src="/assets/img/ASquirrelyStory.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                  <img alt="A Squirrely Story" src="/assets/img/ASquirrelyStory.png" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">A Squirrely Story</h6>
@@ -386,7 +399,7 @@
           <div class="col s12 m4">
             <div class="hover-lift">
                 <a href="picksomeaxe.html">
-                  <img alt="Pick some Axe" src="/assets/img/PickSomeLogo.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                  <img alt="Pick some Axe" src="/assets/img/PickSomeLogo.png" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Pick some Axe</h6>
@@ -396,7 +409,7 @@
           <div class="col s12 m4">
             <div class="hover-lift">
                 <a href="towerdefensefps.html">
-                  <img alt="Tower Defense FPS" src="/assets/img/TowerDefensePNG.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                  <img alt="Tower Defense FPS" src="/assets/img/TowerDefensePNG.png" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Tower Defense FPS</h6>
@@ -408,7 +421,7 @@
           <div class="col s12 m4 offset-m2">
             <div class="hover-lift">
                 <a href="supercold.html">
-                  <img alt="SUPERCOLD" src="/assets/img/MO.gif" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                  <img alt="SUPERCOLD" src="/assets/img/MO.gif" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">SUPERCOLD</h6>
@@ -418,23 +431,26 @@
           <div class="col s12 m4">
             <div class="hover-lift">
                 <a href="chop-off.html">
-                  <img alt="Chop-Off" src="/assets/img/Chop-Off.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                  <img alt="Chop-Off" src="/assets/img/Chop-Off.png" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Chop-Off</h6>
             <p class="tool-text"><i class="fa fa-wrench" style="margin-right: 5px;"></i>Unity, UI, Docs</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <hr style="width: 60%; border: 1px solid #ecf0f1; margin: 80px auto 50px auto;">
-        
-        <h4 style="color: #2c3e50; font-weight: bold; margin-bottom: 50px;">Other Disciplines</h4>
+    <section id="other-work" class="section scrollspy" style="padding: 80px 0; background-color: #f9f9f9; border-top: 1px solid #eaeaea;">
+      <div class="container center-align">
+        <h3 class="page-title" style="margin: 0 auto 10px auto; color: #2c3e50; font-weight: bold; text-align: center;">Other Disciplines</h3>
+        <h6 style="color: #7f8c8d; margin: 0 auto 50px auto; font-weight: 400; font-size: 1.2rem; text-align: center;">Other work I've done!</h6>
         
         <div class="row">
           <div class="col s12 m4">
             <div class="hover-lift" style="border: 2px solid #dde4e9;">
                 <a href="level-design.html">
-                  <img alt="Level Design" src="/assets/img/PrisonBreak.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                  <img alt="Level Design" src="/assets/img/PrisonBreak.png" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Level Design</h6>
@@ -444,7 +460,7 @@
           <div class="col s12 m4">
             <div class="hover-lift" style="border: 2px solid #dde4e9;">
                 <a href="maya-work.html">
-                   <img alt="Maya Work" src="/assets/img/Yosh2.jpg" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                   <img alt="Maya Work" src="/assets/img/Yosh2.jpg" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Maya Work</h6>
@@ -454,7 +470,7 @@
           <div class="col s12 m4">
             <div class="hover-lift" style="border: 2px solid #dde4e9;">
                 <a href="qa-work.html">
-                   <img alt="QA Work" src="/assets/img/QA.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                   <img alt="QA Work" src="/assets/img/QA.png" class="responsive-img square-img" />
                 </a>
             </div>
             <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">QA Work</h6>
@@ -462,11 +478,6 @@
           </div>
         </div>
 
-        <div class="center-align" style="margin-top: 80px;">
-            <a href="assets/Steven_Bruns_Resume.pdf" target="_blank" class="hoverable" style="background-color: #2980b9; color: white; padding: 15px 40px; border-radius: 30px; font-weight: bold; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: background 0.3s ease;">
-              Download Resume
-            </a>
-        </div>
       </div>
     </section>
 
