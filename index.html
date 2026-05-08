@@ -99,7 +99,7 @@
         color: #3498db;
     }
 
-    /* Navbar Mega Menu Dropdown */
+    /* Updated Navbar Mega Menu Dropdown (4x2 Grid) */
     .dropdown-container {
         position: relative;
         display: inline-block;
@@ -114,11 +114,11 @@
         left: 50%;
         transform: translateX(-50%);
         background-color: #1a252f;
-        width: 850px;
-        display: flex;
-        justify-content: space-between;
-        gap: 15px;
-        padding: 20px;
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 25px;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 12px 30px rgba(0,0,0,0.6);
         border-top: 3px solid #2980b9;
@@ -132,7 +132,6 @@
     }
 
     .drop-item {
-        flex: 1;
         text-align: center;
         transition: transform 0.2s ease;
         text-decoration: none;
@@ -144,7 +143,7 @@
 
     .drop-img {
         width: 100%;
-        aspect-ratio: 1 / 1; /* This forces the perfect square shape */
+        aspect-ratio: 16 / 9; /* Back to a 16:9 ratio so all 8 fit nicely in the grid without being too tall */
         object-fit: cover;
         border-radius: 6px;
         border: 2px solid transparent;
@@ -193,7 +192,6 @@
         animation: fadeZoom 25s infinite;
     }
 
-    /* Assigning project images and staggered delays */
     .hero-bg:nth-child(1) { background-image: linear-gradient(rgba(26, 37, 47, 0.75), rgba(44, 62, 80, 0.9)), url('/assets/img/ASquirrelyStory.png'); animation-delay: 0s; }
     .hero-bg:nth-child(2) { background-image: linear-gradient(rgba(26, 37, 47, 0.75), rgba(44, 62, 80, 0.9)), url('/assets/img/PickSomeLogo.png'); animation-delay: 5s; }
     .hero-bg:nth-child(3) { background-image: linear-gradient(rgba(26, 37, 47, 0.75), rgba(44, 62, 80, 0.9)), url('/assets/img/TowerDefensePNG.png'); animation-delay: 10s; }
@@ -245,11 +243,11 @@
           <a href="#skills" class="nav-link" style="font-weight: 500;">Skills</a>
           
           <div class="dropdown-container">
-              <a href="#projects" class="nav-link" style="font-weight: 500; cursor: default;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+              <a href="#projects" class="nav-link" style="font-weight: 500;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
               <div class="projects-dropdown">
                   <a href="squirrely-story.html" class="drop-item">
                       <img src="/assets/img/ASquirrelyStory.png" class="drop-img">
-                      <span class="drop-text">A Squirrely Story</span>
+                      <span class="drop-text">Squirrely Story</span>
                   </a>
                   <a href="picksomeaxe.html" class="drop-item">
                       <img src="/assets/img/PickSomeLogo.png" class="drop-img">
@@ -266,6 +264,18 @@
                   <a href="chop-off.html" class="drop-item">
                       <img src="/assets/img/Chop-Off.png" class="drop-img">
                       <span class="drop-text">Chop-Off</span>
+                  </a>
+                  <a href="level-design.html" class="drop-item">
+                      <img src="/assets/img/PrisonBreak.png" class="drop-img">
+                      <span class="drop-text">Level Design</span>
+                  </a>
+                  <a href="maya-work.html" class="drop-item">
+                      <img src="/assets/img/Yosh2.jpg" class="drop-img">
+                      <span class="drop-text">Maya Work</span>
+                  </a>
+                  <a href="qa-work.html" class="drop-item">
+                      <img src="/assets/img/QA.png" class="drop-img">
+                      <span class="drop-text">QA Work</span>
                   </a>
               </div>
           </div>
@@ -416,9 +426,45 @@
           </div>
         </div>
 
+        <hr style="width: 60%; border: 1px solid #ecf0f1; margin: 80px auto 50px auto;">
+        
+        <h4 style="color: #2c3e50; font-weight: bold; margin-bottom: 50px;">Other Disciplines</h4>
+        
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="hover-lift" style="border: 2px solid #dde4e9;">
+                <a href="level-design.html">
+                  <img alt="Level Design" src="/assets/img/PrisonBreak.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Level Design</h6>
+            <p class="tool-text">Blockouts, Lighting, Pacing</p>
+          </div>
+          
+          <div class="col s12 m4">
+            <div class="hover-lift" style="border: 2px solid #dde4e9;">
+                <a href="maya-work.html">
+                   <img alt="Maya Work" src="/assets/img/Yosh2.jpg" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">Maya Work</h6>
+            <p class="tool-text">3D Modeling, UV Mapping</p>
+          </div>
+          
+          <div class="col s12 m4">
+            <div class="hover-lift" style="border: 2px solid #dde4e9;">
+                <a href="qa-work.html">
+                   <img alt="QA Work" src="/assets/img/QA.png" class="responsive-img" style="width: 100%; height: auto; border-radius: 8px; display: block;" />
+                </a>
+            </div>
+            <h6 style="margin-top: 20px; margin-bottom: 0px; color: #34495e; font-weight: bold; font-size: 1.2rem;">QA Work</h6>
+            <p class="tool-text">Testing, Bug Tracking, Documentation</p>
+          </div>
+        </div>
+
         <div class="center-align" style="margin-top: 80px;">
-            <a href="all-projects.html" class="hoverable" style="background-color: #2980b9; color: white; padding: 15px 40px; border-radius: 30px; font-weight: bold; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: background 0.3s ease;">
-              View Complete Portfolio
+            <a href="assets/Steven_Bruns_Resume.pdf" target="_blank" class="hoverable" style="background-color: #2980b9; color: white; padding: 15px 40px; border-radius: 30px; font-weight: bold; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: background 0.3s ease;">
+              Download Resume
             </a>
         </div>
       </div>
@@ -457,13 +503,10 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    // Materialize - Initializers
     $(document).ready(function () {
       $(".scrollspy").scrollSpy();
-      // Initialize collapse button
       $(".button-collapse").sideNav({
         menuWidth: 190, 
         edge: "left", 
