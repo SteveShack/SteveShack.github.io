@@ -21,6 +21,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
+
     gtag('config', 'UA-126939217-2');
   </script>
 
@@ -75,7 +76,10 @@
         letter-spacing: 1px;
         transition: color 0.3s ease;
         position: relative;
-        padding-bottom: 6px; 
+        padding-bottom: 4px; 
+        display: flex; 
+        align-items: center; /* Fixes vertical text alignment */
+        gap: 5px; /* Spaces icon cleanly */
     }
 
     .navbar-section .nav-link:hover, .navbar-section .nav-link.active {
@@ -100,31 +104,43 @@
         width: 100%;
     }
 
-    /* Navbar Mega Menu Dropdown (Updated to 5 Columns) */
+    /* Navbar Mega Menu Dropdown (Perfect 4x2 Square Grid) */
     .dropdown-container {
         position: relative;
-        display: inline-block;
-        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        /* Padding removed to fix alignment */
     }
     
     .projects-dropdown {
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 15px); /* Drops just below navbar */
         left: 50%;
         transform: translateX(-50%);
         background-color: #1a252f;
-        width: 850px;
+        width: 800px;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
         padding: 25px;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 12px 30px rgba(0,0,0,0.6);
         border-top: 3px solid #2980b9;
         transition: visibility 0s, opacity 0.3s ease;
         z-index: 2000;
+    }
+
+    /* Invisible bridge to keep hover active between navbar and dropdown */
+    .projects-dropdown::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
     }
 
     .dropdown-container:hover .projects-dropdown {
@@ -144,7 +160,7 @@
 
     .drop-img {
         width: 100%;
-        aspect-ratio: 1 / 1; 
+        aspect-ratio: 1 / 1; /* Locked to perfect squares */
         object-fit: cover;
         border-radius: 6px;
         border: 2px solid transparent;
@@ -164,7 +180,7 @@
         text-transform: uppercase;
     }
 
-    /* Global Square Image Lock */
+    /* Global Square Image Lock for Homepage Cards */
     .square-img {
         width: 100%;
         aspect-ratio: 1 / 1;
@@ -233,20 +249,6 @@
         font-weight: 500;
         margin-top: 5px;
     }
-
-    .project-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        justify-content: center;
-    }
-    
-    .project-card-wrapper {
-        flex: 1 1 300px;
-        max-width: 350px;
-        display: flex;
-        flex-direction: column;
-    }
   </style>
 </head>
 
@@ -257,17 +259,17 @@
   
   <main>
     <div class="navbar-section">
-      <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0;">
+      <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0; height: 70px;">
         <div style="flex: 1; padding-left: 20px;">
-          <a href="#intro">
-          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; margin-top: 5px;"></a>
+          <a href="#intro" style="display: flex; align-items: center;">
+          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; border-radius: 4px;"></a>
         </div>
-        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center;">
+        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center; height: 100%;">
           <a href="#about" class="nav-link">About</a>
           <a href="#skills" class="nav-link">Skills</a>
           
           <div class="dropdown-container">
-              <a href="#projects" class="nav-link" style="cursor: pointer;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+              <a href="#projects" class="nav-link" style="cursor: pointer;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
               <div class="projects-dropdown">
                   <a href="squirrely-story.html" class="drop-item">
                       <img src="/assets/img/ASquirrelyStory.png" class="drop-img">
@@ -289,6 +291,18 @@
                       <img src="/assets/img/Chop-Off.png" class="drop-img">
                       <span class="drop-text">Chop-Off</span>
                   </a>
+                  <a href="level-design.html" class="drop-item">
+                      <img src="/assets/img/PrisonBreak.png" class="drop-img">
+                      <span class="drop-text">Level Design</span>
+                  </a>
+                  <a href="maya-work.html" class="drop-item">
+                      <img src="/assets/img/Yosh2.jpg" class="drop-img">
+                      <span class="drop-text">Maya Work</span>
+                  </a>
+                  <a href="qa-work.html" class="drop-item">
+                      <img src="/assets/img/QA.png" class="drop-img">
+                      <span class="drop-text">QA Work</span>
+                  </a>
               </div>
           </div>
 
@@ -297,8 +311,8 @@
           <a href="#contact" class="nav-link">Contact</a>
         </div>
         <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
-          <a href="https://youtube.com/SuperGamingCo" target="_blank">
-            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 45px; margin-top: 5px;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex; align-items: center;">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 45px;">
           </a>
         </div>
       </div>
@@ -334,7 +348,7 @@
           </div>
           <div class="col s12 m7">
             <p style="font-size: 1.45rem; line-height: 1.7; color: #34495e; text-align: left;">
-              Howdy, I'm Steven, an aspiring Game Designer who strives to create the best possible games for others to enjoy! As a senior Game Design major at Champlain College expected to graduate in May 2026, I love to bring others joy while collaborating with teams to create fun experiences!
+              Howdy, I'm Steven, an aspiring Game Designer who strives to create the best possible games for others to enjoy! As a recent graduate Game Design major from Champlain College, I love to bring others joy while collaborating with teams to create fun experiences!
             </p>
             <p style="font-size: 1.45rem; line-height: 1.7; color: #34495e; text-align: left; margin-top: 20px;">
               If you can name a game, chances are I will know some random facts about it. "Let's make games!" is my way of saying let's make an impact on the world, and that is exactly what I intend to do!
