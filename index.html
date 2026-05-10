@@ -62,13 +62,14 @@
     
     .navbar-section .row {
       margin: 0;
-      padding: 10px 20px;
+      padding: 0 20px;
       display: flex;
       align-items: center; 
       justify-content: space-between;
+      height: 70px; /* Fixed height for precise line alignment */
     }
 
-    /* Animated Blue Underline for Nav Links */
+    /* PERFECTED Animated Blue Underline for Nav Links */
     .navbar-section .nav-link {
         color: #ecf0f1;
         font-weight: 500;
@@ -76,10 +77,11 @@
         letter-spacing: 1px;
         transition: color 0.3s ease;
         position: relative;
-        padding-bottom: 4px; 
         display: flex; 
-        align-items: center; /* Fixes vertical text alignment */
-        gap: 5px; /* Spaces icon cleanly */
+        align-items: center;
+        height: 100%; /* Fills the 70px navbar */
+        padding: 0; /* Stripped out padding causing misalignment */
+        gap: 5px; 
     }
 
     .navbar-section .nav-link:hover, .navbar-section .nav-link.active {
@@ -91,7 +93,7 @@
         position: absolute;
         width: 0;
         height: 3px;
-        bottom: 0;
+        bottom: 18px; /* Fixed distance from absolute bottom, mathematically perfectly aligned */
         left: 50%;
         background-color: #3498db;
         transition: all 0.3s ease;
@@ -104,25 +106,25 @@
         width: 100%;
     }
 
-    /* Navbar Mega Menu Dropdown (Perfect 4x2 Square Grid) */
+    /* Navbar Mega Menu Dropdown (Perfect 5x1 Grid) */
     .dropdown-container {
         position: relative;
         display: flex;
         align-items: center;
-        /* Padding removed to fix alignment */
+        height: 100%;
     }
     
     .projects-dropdown {
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        top: calc(100% + 15px); /* Drops just below navbar */
+        top: 100%; 
         left: 50%;
         transform: translateX(-50%);
         background-color: #1a252f;
-        width: 800px;
+        width: 900px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 20px;
         padding: 25px;
         border-radius: 0 0 10px 10px;
@@ -132,7 +134,7 @@
         z-index: 2000;
     }
 
-    /* Invisible bridge to keep hover active between navbar and dropdown */
+    /* Invisible bridge */
     .projects-dropdown::before {
         content: '';
         position: absolute;
@@ -160,7 +162,7 @@
 
     .drop-img {
         width: 100%;
-        aspect-ratio: 1 / 1; /* Locked to perfect squares */
+        aspect-ratio: 1 / 1; 
         object-fit: cover;
         border-radius: 6px;
         border: 2px solid transparent;
@@ -180,7 +182,7 @@
         text-transform: uppercase;
     }
 
-    /* Global Square Image Lock for Homepage Cards */
+    /* Global Square Image Lock */
     .square-img {
         width: 100%;
         aspect-ratio: 1 / 1;
@@ -249,6 +251,20 @@
         font-weight: 500;
         margin-top: 5px;
     }
+
+    .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+    
+    .project-card-wrapper {
+        flex: 1 1 300px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
   </style>
 </head>
 
@@ -259,7 +275,7 @@
   
   <main>
     <div class="navbar-section">
-      <div class="row valign-wrapper" style="padding: 0px 0; margin-bottom: 0; height: 70px;">
+      <div class="row valign-wrapper">
         <div style="flex: 1; padding-left: 20px;">
           <a href="#intro" style="display: flex; align-items: center;">
           <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; border-radius: 4px;"></a>
@@ -290,18 +306,6 @@
                   <a href="chop-off.html" class="drop-item">
                       <img src="/assets/img/Chop-Off.png" class="drop-img">
                       <span class="drop-text">Chop-Off</span>
-                  </a>
-                  <a href="level-design.html" class="drop-item">
-                      <img src="/assets/img/PrisonBreak.png" class="drop-img">
-                      <span class="drop-text">Level Design</span>
-                  </a>
-                  <a href="maya-work.html" class="drop-item">
-                      <img src="/assets/img/Yosh2.jpg" class="drop-img">
-                      <span class="drop-text">Maya Work</span>
-                  </a>
-                  <a href="qa-work.html" class="drop-item">
-                      <img src="/assets/img/QA.png" class="drop-img">
-                      <span class="drop-text">QA Work</span>
                   </a>
               </div>
           </div>
