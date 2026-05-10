@@ -62,7 +62,7 @@
     
     .navbar-section .row {
       margin: 0;
-      padding: 0 20px;
+      padding: 0; /* Removed double padding */
       display: flex;
       align-items: center; 
       justify-content: space-between;
@@ -79,8 +79,8 @@
         position: relative;
         display: flex; 
         align-items: center;
-        height: 100%; /* Fills the 70px navbar */
-        padding: 0; /* Stripped out padding causing misalignment */
+        height: 100%; 
+        padding: 0; 
         gap: 5px; 
     }
 
@@ -93,7 +93,7 @@
         position: absolute;
         width: 0;
         height: 3px;
-        bottom: 18px; /* Fixed distance from absolute bottom, mathematically perfectly aligned */
+        bottom: 18px; 
         left: 50%;
         background-color: #3498db;
         transition: all 0.3s ease;
@@ -275,10 +275,10 @@
   
   <main>
     <div class="navbar-section">
-      <div class="row valign-wrapper">
-        <div style="flex: 1; padding-left: 20px;">
+      <div class="row valign-wrapper" style="margin-bottom: 0;">
+        <div style="flex: 1; padding-left: 20px; display: flex; align-items: center;">
           <a href="#intro" style="display: flex; align-items: center;">
-          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 60px; border-radius: 4px;"></a>
+          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
         </div>
         <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center; height: 100%;">
           <a href="#about" class="nav-link">About</a>
@@ -314,9 +314,9 @@
           <a href="resume.html" class="nav-link">Resume</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px;">
+        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px; align-items: center;">
           <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex; align-items: center;">
-            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 45px;">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 35px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
           </a>
         </div>
       </div>
@@ -352,7 +352,7 @@
           </div>
           <div class="col s12 m7">
             <p style="font-size: 1.45rem; line-height: 1.7; color: #34495e; text-align: left;">
-              Howdy, I'm Steven, an aspiring Game Designer who strives to create the best possible games for others to enjoy! As a recent graduate Game Design major from Champlain College, I love to bring others joy while collaborating with teams to create fun experiences!
+              Howdy, I'm Steven, an aspiring Game Designer who strives to create the best possible games for others to enjoy! As a senior Game Design major at Champlain College expected to graduate in May 2026, I love to bring others joy while collaborating with teams to create fun experiences!
             </p>
             <p style="font-size: 1.45rem; line-height: 1.7; color: #34495e; text-align: left; margin-top: 20px;">
               If you can name a game, chances are I will know some random facts about it. "Let's make games!" is my way of saying let's make an impact on the world, and that is exactly what I intend to do!
