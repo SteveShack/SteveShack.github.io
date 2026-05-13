@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="icon" type="image/png" href="/assets/img/TeaBall.png" />
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <title>Teaball: In Space! | Steven Bruns</title>
+
+  <!-- Orbitron font for that perfect retro-futuristic sci-fi vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    main { padding-left: 0 !important; }
+    body { background-color: #1F2833; font-family: 'Roboto', sans-serif; color: #C5C6C7; }
+    
+    /* UNIVERSAL NAVBAR STYLING (Adapted for Teaball Colors) */
+    .navbar-section {
+      background-color: #0B0C10; 
+      border-bottom: 3px solid #45A29E;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(102, 252, 241, 0.2);
+    }
+    
+    .navbar-section .row {
+      margin: 0; padding: 0; display: flex; align-items: center; justify-content: space-between; height: 70px; 
+    }
+
+    .navbar-section .nav-link {
+        color: #C5C6C7; /* Light grey text */
+        font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+        transition: color 0.3s ease, text-shadow 0.3s ease; position: relative; display: flex; 
+        align-items: center; height: 100%; padding: 0; gap: 5px; font-size: 0.95rem;
+    }
+
+    .navbar-section .nav-link:hover, .navbar-section .nav-link.active {
+        color: #66FCF1; /* Neon Cyan hover */
+        text-shadow: 0 0 8px rgba(102, 252, 241, 0.5);
+    }
+
+    .navbar-section .nav-link::after {
+        content: ''; position: absolute; width: 0; height: 3px; bottom: 18px; 
+        left: 50%; background-color: #66FCF1; transition: all 0.3s ease;
+        transform: translateX(-50%); border-radius: 2px;
+        box-shadow: 0 0 10px #66FCF1;
+    }
+
+    .navbar-section .nav-link:hover::after, .navbar-section .nav-link.active::after {
+        width: 100%;
+    }
+
+    /* Mega Menu Dropdowns */
+    .dropdown-container { position: relative; display: flex; align-items: center; height: 100%; }
+    
+    .projects-dropdown, .jams-dropdown {
+        visibility: hidden; opacity: 0; position: absolute;
+        top: 100%; left: 50%; transform: translateX(-50%);
+        background-color: #0B0C10; padding: 25px;
+        border-radius: 0 0 10px 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+        border-top: 3px solid #66FCF1; transition: visibility 0s, opacity 0.3s ease;
+        z-index: 2000; display: grid; gap: 20px;
+    }
+    
+    .projects-dropdown { width: 900px; grid-template-columns: repeat(5, 1fr); }
+    .jams-dropdown { width: 400px; grid-template-columns: repeat(2, 1fr); }
+
+    .projects-dropdown::before, .jams-dropdown::before {
+        content: ''; position: absolute; top: -20px; left: 0; width: 100%; height: 20px; background: transparent;
+    }
+
+    .dropdown-container:hover .projects-dropdown, .dropdown-container:hover .jams-dropdown {
+        visibility: visible; opacity: 1;
+    }
+
+    .drop-item { text-align: center; transition: transform 0.2s ease; text-decoration: none; }
+    .drop-item:hover { transform: translateY(-5px); }
+    .drop-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; border: 2px solid transparent; transition: border 0.2s ease; }
+    .drop-item:hover .drop-img { border-color: #66FCF1; box-shadow: 0 0 15px rgba(102, 252, 241, 0.4); }
+    .drop-text { display: block; color: #C5C6C7; font-size: 0.85rem; font-weight: 700; margin-top: 8px; text-transform: uppercase; }
+
+    /* Page specific styles */
+    p.project-text { font-size: 1.15rem; line-height: 1.8; text-align: left; color: #C5C6C7; }
+    .quick-facts { background-color: #0B0C10; padding: 20px 0; border-bottom: 2px solid #45A29E; color: white; }
+    .fact-title { font-weight: 700; color: #45A29E; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    .fact-detail { font-weight: 500; font-size: 1.1rem; color: #66FCF1; }
+    .contribution-header { color: #66FCF1; font-weight: bold; margin-bottom: 15px; font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+    
+    .screenshot-img {
+        width: 100%; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        border: 2px solid #45A29E; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .screenshot-img:hover { 
+        transform: scale(1.02); 
+        border-color: #66FCF1; 
+        box-shadow: 0 8px 25px rgba(102, 252, 241, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="navbar-section">
+      <div class="row valign-wrapper">
+        <div style="flex: 1; padding-left: 20px; display: flex; align-items: center;">
+          <a href="index.html" style="display: flex; align-items: center;">
+          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
+        </div>
+        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center; height: 100%;">
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#skills" class="nav-link">Skills</a>
+          
+          <div class="dropdown-container">
+              <a href="index.html#projects" class="nav-link" style="cursor: pointer;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
+              <div class="projects-dropdown">
+                  <a href="squirrely-story.html" class="drop-item"><img src="/assets/img/ASquirrelyStory.png" class="drop-img"><span class="drop-text">Squirrely Story</span></a>
+                  <a href="picksomeaxe.html" class="drop-item"><img src="/assets/img/PickSomeLogo.png" class="drop-img"><span class="drop-text">Pick Some Axe</span></a>
+                  <a href="towerdefensefps.html" class="drop-item"><img src="/assets/img/TowerDefensePNG.png" class="drop-img"><span class="drop-text">TD FPS</span></a>
+                  <a href="supercold.html" class="drop-item"><img src="/assets/img/MO.gif" class="drop-img"><span class="drop-text">SUPERCOLD</span></a>
+                  <a href="chop-off.html" class="drop-item"><img src="/assets/img/Chop-Off.png" class="drop-img"><span class="drop-text">Chop-Off</span></a>
+              </div>
+          </div>
+
+          <div class="dropdown-container">
+              <a href="index.html#game-jams" class="nav-link active" style="cursor: pointer; color: #66FCF1; text-shadow: 0 0 8px rgba(102, 252, 241, 0.5);">Game Jams <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
+              <div class="jams-dropdown">
+                  <a href="pool.html" class="drop-item"><img src="/assets/img/Pool.png" class="drop-img"><span class="drop-text">POOL</span></a>
+                  <a href="teaball.html" class="drop-item"><img src="/assets/img/TeaBall.png" class="drop-img"><span class="drop-text" style="color: #66FCF1;">Teaball: In Space!</span></a>
+              </div>
+          </div>
+
+          <a href="index.html#other-work" class="nav-link">Other Work</a>
+          <a href="resume.html" class="nav-link">Resume</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px; align-items: center;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex; align-items: center;">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 35px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thematic Hero Section -->
+    <section class="section" style="background-image: linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.95)), url('/assets/img/Tea1.jpg'); background-size: cover; background-position: center; padding: 120px 0; text-align: center;">
+        <h1 style="color: #ffffff; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 5.5rem; letter-spacing: 2px; margin: 0; text-shadow: 0px 0px 20px rgba(102, 252, 241, 0.8);">Teaball: <span style="color: #66FCF1;">In Space!</span></h1>
+        <p style="color: #C5C6C7; font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 500; margin-top: 15px; letter-spacing: 1px;">Make tea by playing skee-ball!</p>
+    </section>
+
+    <!-- Quick Facts -->
+    <div class="quick-facts center-align">
+      <div class="container">
+        <div class="row" style="margin-bottom: 0;">
+          <div class="col s6 m4 l2 offset-l1"><span class="fact-title">Role</span><br><span class="fact-detail">Audio & Tech Art</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Event</span><br><span class="fact-detail">Global Jam 2026</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Hardware</span><br><span class="fact-detail">OVR Omara</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Theme</span><br><span class="fact-detail">"Mask"</span></div>
+          <div class="col s12 m4 l2"><span class="fact-title">Timeline</span><br><span class="fact-detail">2 Day Sprint</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Concept Section -->
+    <section class="section" style="padding: 80px 0; background-color: #1F2833;">
+      <div class="container">
+        <div class="row valign-wrapper" style="flex-wrap: wrap;">
+          <div class="col s12 m5 center-align" style="padding: 0 20px;">
+            <img src="/assets/img/TeaBall.png" alt="Teaball Logo" class="responsive-img hoverable" style="max-width: 100%; border-radius: 12px; box-shadow: 0 0 25px rgba(102, 252, 241, 0.15); border: 2px solid #45A29E;">
+          </div>
+          <div class="col s12 m7">
+            <h4 style="font-family: 'Orbitron', sans-serif; color: #66FCF1; text-shadow: 0 0 10px rgba(102, 252, 241, 0.3);">The Concept: Masking Scents</h4>
+            <p class="project-text">
+                Created during a rapid two-day sprint at the end of the 2026 Global Game Jam, our team was given the theme <strong>"Mask"</strong>. We decided to take a unique approach by focusing on <em>masking scent</em>, specifically to utilize a brand new piece of technology: the <strong>OVR Omara</strong>. 
+            </p>
+            <p class="project-text">
+                In this sci-fi bartending game, you brew specialized teas for eccentric alien customers by playing skee-ball! Each ingredient you land in the cups satisfies a different scent profile requested by the customer. It was an incredible experience getting to concept, build, and finalize a game around cutting-edge olfactory hardware so quickly!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contributions Section -->
+    <section class="section" style="padding: 80px 0; background-color: #0B0C10; border-top: 2px dashed #45A29E;">
+      <div class="container">
+        <h3 class="center-align" style="font-family: 'Orbitron', sans-serif; color: #ffffff; margin-bottom: 50px;">My Contributions</h3>
+        
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="hoverable" style="background-color: #1F2833; padding: 30px; border-radius: 8px; height: 100%; border-top: 4px solid #66FCF1; box-shadow: 0 8px 15px rgba(0,0,0,0.5);">
+              <h5 class="contribution-header"><i class="fa fa-music"></i> Audio Design</h5>
+              <p class="project-text" style="font-size: 1.05rem;">I created and implemented the sounds for the game. Giving satisfying audio feedback for the skee-ball rolling, the ingredients popping, and the alien chatter was crucial for making the short gameplay loop feel rewarding.</p>
+            </div>
+          </div>
+          
+          <div class="col s12 m4">
+            <div class="hoverable" style="background-color: #1F2833; padding: 30px; border-radius: 8px; height: 100%; border-top: 4px solid #FFD700; box-shadow: 0 8px 15px rgba(0,0,0,0.5);">
+              <h5 class="contribution-header" style="color: #FFD700;"><i class="fa fa-code"></i> Interactive Polish</h5>
+              <p class="project-text" style="font-size: 1.05rem;">I programmed the interactive tip jar that dynamically fills with money after successfully serving an order, as well as the script that handles the tea cup appearing and disappearing seamlessly during the brewing sequence.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="hoverable" style="background-color: #1F2833; padding: 30px; border-radius: 8px; height: 100%; border-top: 4px solid #FF5722; box-shadow: 0 8px 15px rgba(0,0,0,0.5);">
+              <h5 class="contribution-header" style="color: #FF5722;"><i class="fa fa-user-secret"></i> Character Design</h5>
+              <p class="project-text" style="font-size: 1.05rem;">To populate our sci-fi bar, I designed and modeled two of the unique alien customers that players serve. Establishing a goofy, lighthearted tone for the patrons was a blast during our quick brainstorm sessions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section class="section" style="padding: 80px 0; background-color: #1F2833;">
+      <div class="container">
+        <h3 class="center-align" style="font-family: 'Orbitron', sans-serif; color: #ffffff; margin-bottom: 40px;">Skee-ball & Scents</h3>
+        
+        <div class="row">
+          <div class="col s12 m4 center-align">
+            <img src="/assets/img/Tea1.png" alt="Alien customer requesting blue tea" class="responsive-img screenshot-img materialboxed" data-caption="A sad blue alien customer requesting ingredients for 'blue' tea.">
+            <h6 style="font-weight: bold; color: #66FCF1; margin-top: 15px; font-family: 'Orbitron', sans-serif;">Customer Interactions</h6>
+          </div>
+          
+          <div class="col s12 m4 center-align">
+            <img src="/assets/img/Tea2.png" alt="Tea cup reacting to skee-ball throw" class="responsive-img screenshot-img materialboxed" data-caption="The tea cup reacting visually as a skee-ball ingredient lands inside.">
+            <h6 style="font-weight: bold; color: #66FCF1; margin-top: 15px; font-family: 'Orbitron', sans-serif;">Skee-ball Brewing</h6>
+          </div>
+
+          <div class="col s12 m4 center-align">
+            <img src="/assets/img/Tea3.png" alt="Robot sheriff ordering fuel" class="responsive-img screenshot-img materialboxed" data-caption="A robot sheriff ordering a shot of fuel, with the scent-masking UI active on the right.">
+            <h6 style="font-weight: bold; color: #66FCF1; margin-top: 15px; font-family: 'Orbitron', sans-serif;">Scent Masking UI</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <section class="section" style="padding: 60px 0; background-color: #0B0C10; border-top: 5px solid #45A29E; text-align: center;">
+      <div class="container">
+        <h4 class="white-text" style="font-family: 'Orbitron', sans-serif; letter-spacing: 1px; margin-bottom: 20px;">Ready to brew?</h4>
+        <a href="https://steveshack.itch.io/" target="_blank" class="hoverable" style="display: inline-block; margin-bottom: 40px; font-size: 1.3rem; font-weight: bold; color: #FFFFFF; background-color: #fa5c5c; padding: 12px 40px; border-radius: 30px; text-decoration: none; border: 2px solid #fa5c5c;">
+            <i class="fa fa-gamepad"></i> Check out my Itch.io
+        </a>
+        
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 950px;">
+          <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #1F2833; color: #66FCF1; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #45A29E;"><i class="fa fa-envelope"></i> steveneb0212@gmail.com</a>
+          <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #1F2833; color: #66FCF1; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #45A29E;"><i class="fa fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #1F2833; color: #66FCF1; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #45A29E;"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Initialize materialboxed for image expanding
+      $('.materialboxed').materialbox();
+    });
+  </script>
+</body>
+</html>
