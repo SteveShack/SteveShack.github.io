@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <title>POOL | Steven Bruns</title>
+
+  <style>
+    /* Inherited styles for consistency */
+    html { scroll-behavior: smooth; }
+    main { padding-left: 0 !important; }
+    
+    .navbar-section {
+      background-color: #1a252f; 
+      border-bottom: 3px solid #2980b9;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .navbar-section .row {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center; 
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .navbar-section .nav-link {
+        color: #ecf0f1;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+        position: relative;
+        display: flex; 
+        align-items: center;
+        height: 100%; 
+        padding: 0; 
+        gap: 5px; 
+    }
+
+    .navbar-section .nav-link:hover { color: #3498db; }
+
+    /* Dropdown Menus (Matches Index) */
+    .dropdown-container { position: relative; display: flex; align-items: center; height: 100%; }
+    
+    .projects-dropdown, .jams-dropdown {
+        visibility: hidden; opacity: 0; position: absolute;
+        top: 100%; left: 50%; transform: translateX(-50%);
+        background-color: #1a252f; padding: 25px;
+        border-radius: 0 0 10px 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+        border-top: 3px solid #2980b9; transition: visibility 0s, opacity 0.3s ease;
+        z-index: 2000; display: grid; gap: 20px;
+    }
+    
+    .projects-dropdown { width: 900px; grid-template-columns: repeat(5, 1fr); }
+    .jams-dropdown { width: 400px; grid-template-columns: repeat(2, 1fr); }
+
+    .projects-dropdown::before, .jams-dropdown::before {
+        content: ''; position: absolute; top: -20px; left: 0; width: 100%; height: 20px; background: transparent;
+    }
+
+    .dropdown-container:hover .projects-dropdown, .dropdown-container:hover .jams-dropdown {
+        visibility: visible; opacity: 1;
+    }
+
+    .drop-item { text-align: center; transition: transform 0.2s ease; text-decoration: none; }
+    .drop-item:hover { transform: translateY(-5px); }
+    .drop-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; border: 2px solid transparent; transition: border 0.2s ease; }
+    .drop-item:hover .drop-img { border-color: #3498db; }
+    .drop-text { display: block; color: #ecf0f1; font-size: 0.85rem; font-weight: 600; margin-top: 8px; text-transform: uppercase; }
+
+    /* Project Page Specific Styles */
+    .project-header {
+        background: linear-gradient(rgba(26, 37, 47, 0.85), rgba(44, 62, 80, 0.95)), url('Pool.png') center/cover;
+        padding: 100px 0;
+        text-align: center;
+        border-bottom: 4px solid #2980b9;
+    }
+    
+    .content-section { padding: 60px 0; }
+    
+    .screenshot-img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    
+    .screenshot-img:hover {
+        transform: scale(1.02);
+    }
+    
+    .feature-box {
+        background-color: #f4f7f6;
+        padding: 25px;
+        border-left: 5px solid #2980b9;
+        border-radius: 4px;
+        margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- Navbar (Identical to main page) -->
+    <div class="navbar-section">
+      <div class="row valign-wrapper" style="margin-bottom: 0;">
+        <div style="flex: 1; padding-left: 20px; display: flex; align-items: center;">
+          <a href="index.html#intro" style="display: flex; align-items: center;">
+          <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
+        </div>
+        <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center; height: 100%;">
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#skills" class="nav-link">Skills</a>
+          
+          <div class="dropdown-container">
+              <a href="index.html#projects" class="nav-link" style="cursor: pointer;">Projects <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
+              <div class="projects-dropdown">
+                  <a href="squirrely-story.html" class="drop-item"><img src="/assets/img/ASquirrelyStory.png" class="drop-img"><span class="drop-text">Squirrely Story</span></a>
+                  <a href="picksomeaxe.html" class="drop-item"><img src="/assets/img/PickSomeLogo.png" class="drop-img"><span class="drop-text">Pick Some Axe</span></a>
+                  <a href="towerdefensefps.html" class="drop-item"><img src="/assets/img/TowerDefensePNG.png" class="drop-img"><span class="drop-text">TD FPS</span></a>
+                  <a href="supercold.html" class="drop-item"><img src="/assets/img/MO.gif" class="drop-img"><span class="drop-text">SUPERCOLD</span></a>
+                  <a href="chop-off.html" class="drop-item"><img src="/assets/img/Chop-Off.png" class="drop-img"><span class="drop-text">Chop-Off</span></a>
+              </div>
+          </div>
+
+          <div class="dropdown-container">
+              <a href="index.html#game-jams" class="nav-link" style="cursor: pointer; color: #3498db;">Game Jams <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
+              <div class="jams-dropdown">
+                  <a href="pool.html" class="drop-item"><img src="Pool.png" class="drop-img"><span class="drop-text" style="color: #3498db;">POOL</span></a>
+                  <a href="teaball.html" class="drop-item"><img src="TeaBall.png" class="drop-img"><span class="drop-text">Teaball: In Space!</span></a>
+              </div>
+          </div>
+
+          <a href="index.html#other-work" class="nav-link">Other Work</a>
+          <a href="resume.html" class="nav-link">Resume</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Header -->
+    <section class="project-header">
+      <div class="container">
+        <h1 class="white-text" style="font-weight: 700; font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">POOL</h1>
+        <h4 style="color: #bdc3c7; font-weight: 400; font-size: 1.5rem; margin-top: 10px;">Land On Our Pool</h4>
+        
+        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <span style="background-color: rgba(41, 128, 185, 0.8); color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">GMTK Jam 2025</span>
+            <span style="background-color: rgba(41, 128, 185, 0.8); color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">Unity</span>
+            <span style="background-color: rgba(41, 128, 185, 0.8); color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">Audio Design</span>
+        </div>
+
+        <div style="margin-top: 40px;">
+          <a href="https://steveshack.itch.io/game-jam-2025" target="_blank" class="hoverable" style="background-color: #e74c3c; color: white; padding: 15px 35px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
+            <i class="fa fa-gamepad"></i> Play on Itch.io
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="content-section" style="background-color: #ffffff;">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column: Text -->
+          <div class="col s12 m7">
+            <h4 style="color: #2c3e50; font-weight: bold; margin-bottom: 20px;">The Concept</h4>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #34495e;">
+              Created during the four-day GMTK 2025 Game Jam, our team was tasked with the theme <strong>LOOP</strong>. During our brainstorming phase, we decided to literally reverse the word to get <strong>POOL</strong>. From there, the concept was born: a simple, highly-replayable game where you must successfully land in a pool over and over again from increasingly terrifying heights. 
+            </p>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #34495e;">
+              We added the subtitle "Land On Our Pool" as a fun way to sneak the word LOOP back into the title. If you can manage to dive down from the absolute highest point, you win!
+            </p>
+
+            <div class="feature-box" style="margin-top: 40px;">
+                <h5 style="color: #2980b9; font-weight: bold; margin-top: 0;">My Contributions</h5>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #34495e; padding-left: 20px;">
+                    <li><strong>Audio & Music:</strong> I took on the responsibility of creating the sound effects and music for the game. This was a fantastic learning experience and served as direct preparation for my audio work on our larger project, <em>Pick Some Axe</em>.</li>
+                    <li><strong>Unity & Ragdolls:</strong> The jam was a great excuse to get hands-on with Unity's physics and experiment heavily with its ragdoll system, creating the hilarious and chaotic falling mechanics you see in the game.</li>
+                    <li><strong>Team Leadership:</strong> Beyond the engine, I focused on scheduling and leading the team. The goal wasn't just to make a game, but to bond as a unit before tackling larger studio projects. Coordinating a remote jam team is tough, but incredibly rewarding!</li>
+                </ul>
+            </div>
+          </div>
+
+          <!-- Right Column: Images -->
+          <div class="col s12 m5">
+            <img src="Pool1.jpg" alt="POOL Gameplay - Falling past obstacles" class="screenshot-img">
+            <img src="Pool2.jpg" alt="POOL Gameplay - Bouncing off UFO" class="screenshot-img">
+            <img src="Pool3.jpg" alt="POOL Gameplay - Floating in space" class="screenshot-img">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+</body>
+</html>
