@@ -73,7 +73,7 @@
         width: 100%;
     }
 
-    /* Squirrely Mega Menu Dropdown */
+    /* Squirrely Mega Menu Dropdowns */
     .dropdown-container {
         position: relative;
         display: flex;
@@ -81,7 +81,7 @@
         height: 100%;
     }
     
-    .projects-dropdown {
+    .projects-dropdown, .jams-dropdown {
         visibility: hidden;
         opacity: 0;
         position: absolute;
@@ -89,19 +89,20 @@
         left: 50%;
         transform: translateX(-50%);
         background-color: #FDFBF7; /* Off-white dropdown bg */
-        width: 900px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
         padding: 25px;
         border-radius: 0 0 10px 10px;
         box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         border-top: 3px solid #D35400;
         transition: visibility 0s, opacity 0.3s ease;
         z-index: 2000;
+        display: grid;
+        gap: 20px;
     }
 
-    .projects-dropdown::before {
+    .projects-dropdown { width: 900px; grid-template-columns: repeat(5, 1fr); }
+    .jams-dropdown { width: 400px; grid-template-columns: repeat(2, 1fr); }
+
+    .projects-dropdown::before, .jams-dropdown::before {
         content: '';
         position: absolute;
         top: -20px;
@@ -111,7 +112,8 @@
         background: transparent;
     }
 
-    .dropdown-container:hover .projects-dropdown {
+    .dropdown-container:hover .projects-dropdown, 
+    .dropdown-container:hover .jams-dropdown {
         visibility: visible;
         opacity: 1;
     }
@@ -196,8 +198,8 @@
           </div>
 
           <div class="dropdown-container">
-              <a href="#game-jams" class="nav-link" style="cursor: pointer;">Game Jams <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
-              <div class="gamejams-dropdown">
+              <a href="index.html#game-jams" class="nav-link" style="cursor: pointer;">Game Jams <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
+              <div class="jams-dropdown">
                   <a href="pool.html" class="drop-item">
                       <img src="/assets/img/Pool.png" class="drop-img">
                       <span class="drop-text">POOL</span>
