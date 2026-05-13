@@ -6,59 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+  <link rel="icon" type="image/png" href="Pool.png" />
+  
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <title>POOL | Steven Bruns</title>
 
+  <!-- Added Righteous font for a fun, bold game jam vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Inherited styles for consistency */
-    html { scroll-behavior: smooth; }
     main { padding-left: 0 !important; }
+    body { background-color: #F4FAFF; font-family: 'Roboto', sans-serif; color: #0A192F; }
     
+    /* UNIVERSAL NAVBAR STYLING (Adapted for POOL Colors) */
     .navbar-section {
-      background-color: #1a252f; 
-      border-bottom: 3px solid #2980b9;
+      background-color: #F4FAFF; 
+      border-bottom: 3px solid #00A8E8;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     
     .navbar-section .row {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center; 
-      justify-content: space-between;
-      height: 70px;
+      margin: 0; padding: 0; display: flex; align-items: center; justify-content: space-between; height: 70px; 
     }
 
     .navbar-section .nav-link {
-        color: #ecf0f1;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: color 0.3s ease;
-        position: relative;
-        display: flex; 
-        align-items: center;
-        height: 100%; 
-        padding: 0; 
-        gap: 5px; 
+        color: #0A192F; /* Deep Navy text */
+        font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+        transition: color 0.3s ease; position: relative; display: flex; 
+        align-items: center; height: 100%; padding: 0; gap: 5px; font-size: 0.95rem;
     }
 
-    .navbar-section .nav-link:hover { color: #3498db; }
+    .navbar-section .nav-link:hover, .navbar-section .nav-link.active {
+        color: #00A8E8; /* Bright Pool Blue hover */
+    }
 
-    /* Dropdown Menus (Matches Index) */
+    .navbar-section .nav-link::after {
+        content: ''; position: absolute; width: 0; height: 3px; bottom: 18px; 
+        left: 50%; background-color: #00A8E8; transition: all 0.3s ease;
+        transform: translateX(-50%); border-radius: 2px;
+    }
+
+    .navbar-section .nav-link:hover::after, .navbar-section .nav-link.active::after {
+        width: 100%;
+    }
+
+    /* Mega Menu Dropdowns */
     .dropdown-container { position: relative; display: flex; align-items: center; height: 100%; }
     
     .projects-dropdown, .jams-dropdown {
         visibility: hidden; opacity: 0; position: absolute;
         top: 100%; left: 50%; transform: translateX(-50%);
-        background-color: #1a252f; padding: 25px;
-        border-radius: 0 0 10px 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-        border-top: 3px solid #2980b9; transition: visibility 0s, opacity 0.3s ease;
+        background-color: #F4FAFF; padding: 25px;
+        border-radius: 0 0 10px 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        border-top: 3px solid #00A8E8; transition: visibility 0s, opacity 0.3s ease;
         z-index: 2000; display: grid; gap: 20px;
     }
     
@@ -76,48 +81,30 @@
     .drop-item { text-align: center; transition: transform 0.2s ease; text-decoration: none; }
     .drop-item:hover { transform: translateY(-5px); }
     .drop-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; border: 2px solid transparent; transition: border 0.2s ease; }
-    .drop-item:hover .drop-img { border-color: #3498db; }
-    .drop-text { display: block; color: #ecf0f1; font-size: 0.85rem; font-weight: 600; margin-top: 8px; text-transform: uppercase; }
+    .drop-item:hover .drop-img { border-color: #00A8E8; }
+    .drop-text { display: block; color: #0A192F; font-size: 0.85rem; font-weight: 700; margin-top: 8px; text-transform: uppercase; }
 
-    /* Project Page Specific Styles */
-    .project-header {
-        background: linear-gradient(rgba(26, 37, 47, 0.85), rgba(44, 62, 80, 0.95)), url('/assets/img/Pool.png') center/cover;
-        padding: 100px 0;
-        text-align: center;
-        border-bottom: 4px solid #2980b9;
-    }
-    
-    .content-section { padding: 60px 0; }
+    /* Page specific styles */
+    p.project-text { font-size: 1.15rem; line-height: 1.8; text-align: left; color: #334E68; }
+    .quick-facts { background-color: #0A192F; padding: 20px 0; border-bottom: 4px solid #00A8E8; color: white; }
+    .fact-title { font-weight: 700; color: #00A8E8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    .fact-detail { font-weight: 500; font-size: 1.1rem; }
+    .contribution-header { color: #00A8E8; font-weight: bold; margin-bottom: 15px; font-family: 'Righteous', cursive; letter-spacing: 1px; }
     
     .screenshot-img {
-        width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        margin-bottom: 20px;
-        transition: transform 0.3s ease;
+        width: 100%; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        border: 2px solid #E2E8F0; transition: transform 0.3s ease, border-color 0.3s ease;
     }
-    
-    .screenshot-img:hover {
-        transform: scale(1.02);
-    }
-    
-    .feature-box {
-        background-color: #f4f7f6;
-        padding: 25px;
-        border-left: 5px solid #2980b9;
-        border-radius: 4px;
-        margin-bottom: 30px;
-    }
+    .screenshot-img:hover { transform: scale(1.02); border-color: #00A8E8; }
   </style>
 </head>
 
 <body>
   <main>
-    <!-- Navbar (Identical to main page) -->
     <div class="navbar-section">
-      <div class="row valign-wrapper" style="margin-bottom: 0;">
+      <div class="row valign-wrapper">
         <div style="flex: 1; padding-left: 20px; display: flex; align-items: center;">
-          <a href="index.html#intro" style="display: flex; align-items: center;">
+          <a href="index.html" style="display: flex; align-items: center;">
           <img src="/assets/img/SLogo.jpg" alt="Logo" style="height: 50px; border-radius: 4px;"></a>
         </div>
         <div class="hide-on-small-only" style="flex: 3; display: flex; justify-content: center; gap: 40px; align-items: center; height: 100%;">
@@ -136,9 +123,9 @@
           </div>
 
           <div class="dropdown-container">
-              <a href="index.html#game-jams" class="nav-link" style="cursor: pointer; color: #3498db;">Game Jams <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
+              <a href="index.html#game-jams" class="nav-link active" style="cursor: pointer; color: #00A8E8;">Game Jams <i class="fa fa-caret-down" style="font-size: 0.8rem;"></i></a>
               <div class="jams-dropdown">
-                  <a href="pool.html" class="drop-item"><img src="/assets/img/Pool.png" class="drop-img"><span class="drop-text" style="color: #3498db;">POOL</span></a>
+                  <a href="pool.html" class="drop-item"><img src="Pool.png" class="drop-img"><span class="drop-text" style="color: #00A8E8;">POOL</span></a>
                   <a href="teaball.html" class="drop-item"><img src="TeaBall.png" class="drop-img"><span class="drop-text">Teaball: In Space!</span></a>
               </div>
           </div>
@@ -147,65 +134,132 @@
           <a href="resume.html" class="nav-link">Resume</a>
           <a href="index.html#contact" class="nav-link">Contact</a>
         </div>
-      </div>
-    </div>
-
-    <!-- Project Header -->
-    <section class="project-header">
-      <div class="container">
-        <h1 class="white-text" style="font-weight: 700; font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">POOL</h1>
-        <h4 style="color: #bdc3c7; font-weight: 400; font-size: 1.5rem; margin-top: 10px;">Land On Our Pool</h4>
-        
-        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-            <span style="background-color: rgba(41, 128, 185, 0.8); color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">GMTK Jam 2025</span>
-            <span style="background-color: rgba(41, 128, 185, 0.8); color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">Unity</span>
-            <span style="background-color: rgba(41, 128, 185, 0.8); color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">Audio Design</span>
-        </div>
-
-        <div style="margin-top: 40px;">
-          <a href="https://steveshack.itch.io/game-jam-2025" target="_blank" class="hoverable" style="background-color: #e74c3c; color: white; padding: 15px 35px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.2s; font-size: 1.1rem;">
-            <i class="fa fa-gamepad"></i> Play on Itch.io
+        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 20px; align-items: center;">
+          <a href="https://youtube.com/SuperGamingCo" target="_blank" style="display: flex; align-items: center;">
+            <img src="/assets/img/Youtube.png" alt="Youtube" style="height: 35px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
           </a>
         </div>
       </div>
+    </div>
+
+    <!-- Thematic Hero Section -->
+    <section class="section" style="background-image: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.9)), url('Pool.png'); background-size: cover; background-position: center; padding: 120px 0; text-align: center;">
+        <h1 class="white-text" style="font-family: 'Righteous', cursive; font-size: 6rem; letter-spacing: 4px; margin: 0; text-shadow: 0px 4px 15px rgba(0,168,232,0.6);">POOL</h1>
+        <p style="color: #E2E8F0; font-size: 1.8rem; font-weight: 500; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px;">Land On Our Pool</p>
     </section>
 
-    <!-- Project Details -->
-    <section class="content-section" style="background-color: #ffffff;">
+    <!-- Quick Facts -->
+    <div class="quick-facts center-align">
       <div class="container">
-        <div class="row">
-          <!-- Left Column: Text -->
-          <div class="col s12 m7">
-            <h4 style="color: #2c3e50; font-weight: bold; margin-bottom: 20px;">The Concept</h4>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #34495e;">
-              Created during the four-day GMTK 2025 Game Jam, our team was tasked with the theme <strong>LOOP</strong>. During our brainstorming phase, we decided to literally reverse the word to get <strong>POOL</strong>. From there, the concept was born: a simple, highly-replayable game where you must successfully land in a pool over and over again from increasingly terrifying heights. 
-            </p>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #34495e;">
-              We added the subtitle "Land On Our Pool" as a fun way to sneak the word LOOP back into the title. If you can manage to dive down from the absolute highest point, you win!
-            </p>
+        <div class="row" style="margin-bottom: 0;">
+          <div class="col s6 m4 l2 offset-l1"><span class="fact-title">Role</span><br><span class="fact-detail">Audio & Leadership</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Event</span><br><span class="fact-detail">GMTK Jam 2025</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Engine</span><br><span class="fact-detail">Unity 3D</span></div>
+          <div class="col s6 m4 l2"><span class="fact-title">Theme</span><br><span class="fact-detail">"LOOP"</span></div>
+          <div class="col s12 m4 l2"><span class="fact-title">Timeline</span><br><span class="fact-detail">4 Day Sprint</span></div>
+        </div>
+      </div>
+    </div>
 
-            <div class="feature-box" style="margin-top: 40px;">
-                <h5 style="color: #2980b9; font-weight: bold; margin-top: 0;">My Contributions</h5>
-                <ul style="font-size: 1.1rem; line-height: 1.8; color: #34495e; padding-left: 20px;">
-                    <li><strong>Audio & Music:</strong> I took on the responsibility of creating the sound effects and music for the game. This was a fantastic learning experience and served as direct preparation for my audio work on our larger project, <em>Pick Some Axe</em>.</li>
-                    <li><strong>Unity & Ragdolls:</strong> The jam was a great excuse to get hands-on with Unity's physics and experiment heavily with its ragdoll system, creating the hilarious and chaotic falling mechanics you see in the game.</li>
-                    <li><strong>Team Leadership:</strong> Beyond the engine, I focused on scheduling and leading the team. The goal wasn't just to make a game, but to bond as a unit before tackling larger studio projects. Coordinating a remote jam team is tough, but incredibly rewarding!</li>
-                </ul>
-            </div>
+    <!-- The Concept Section -->
+    <section class="section" style="padding: 80px 0; background-color: #F4FAFF;">
+      <div class="container">
+        <div class="row valign-wrapper" style="flex-wrap: wrap;">
+          <div class="col s12 m5 center-align" style="padding: 0 20px;">
+            <img src="/assets/img/Pool.png" alt="POOL Logo" class="responsive-img hoverable" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,168,232,0.2); border: 4px solid #00A8E8;">
           </div>
-
-          <!-- Right Column: Images -->
-          <div class="col s12 m5">
-            <img src="/assets/img/Pool1.jpg" alt="POOL Gameplay - Falling past obstacles" class="screenshot-img">
-            <img src="/assets/img/Pool2.jpg" alt="POOL Gameplay - Bouncing off UFO" class="screenshot-img">
-            <img src="/assets/img/Pool3.jpg" alt="POOL Gameplay - Floating in space" class="screenshot-img">
+          <div class="col s12 m7">
+            <h4 style="font-family: 'Righteous', cursive; color: #0A192F;">The Concept: Reversing the Theme</h4>
+            <p class="project-text">
+                Created during the four-day GMTK 2025 Game Jam, our team was tasked with the theme <strong>LOOP</strong>. During our brainstorming phase, we decided to look at it differently and literally reversed the word to get <strong>POOL</strong>.
+            </p>
+            <p class="project-text">
+                From there, the concept was born: a simple, highly-replayable game where you must successfully maneuver a ragdoll to land in a tiny pool over and over again from increasingly terrifying heights. We added the subtitle <em>Land On Our Pool</em> as a fun way to sneak the word LOOP back into the title. If you can manage to dive down from the absolute highest point, you win!
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Contributions Section -->
+    <section class="section" style="padding: 80px 0; background-color: #E2E8F0;">
+      <div class="container">
+        <h3 class="center-align" style="font-family: 'Righteous', cursive; color: #0A192F; margin-bottom: 50px;">My Contributions</h3>
+        
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="hoverable" style="background-color: #FFFFFF; padding: 30px; border-radius: 8px; height: 100%; border-top: 5px solid #00A8E8; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+              <h5 class="contribution-header"><i class="fa fa-music"></i> Audio & Music</h5>
+              <p class="project-text" style="font-size: 1.05rem;">I took on the responsibility of creating the sound effects and music for the game. This was a fantastic learning experience in mixing and theme creation, serving as direct preparation for my audio work on our larger studio project, <em>Pick Some Axe</em>.</p>
+            </div>
+          </div>
+          
+          <div class="col s12 m4">
+            <div class="hoverable" style="background-color: #FFFFFF; padding: 30px; border-radius: 8px; height: 100%; border-top: 5px solid #4CAF50; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+              <h5 class="contribution-header" style="color: #4CAF50;"><i class="fa fa-cubes"></i> Unity & Ragdolls</h5>
+              <p class="project-text" style="font-size: 1.05rem;">The jam was a great excuse to get hands-on with Unity's physics systems. I experimented heavily with the built-in ragdoll system to create the hilarious, chaotic, and unpredictable falling mechanics that serve as the core of the gameplay.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="hoverable" style="background-color: #FFFFFF; padding: 30px; border-radius: 8px; height: 100%; border-top: 5px solid #FF9800; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+              <h5 class="contribution-header" style="color: #FF9800;"><i class="fa fa-users"></i> Team Leadership</h5>
+              <p class="project-text" style="font-size: 1.05rem;">Beyond engine work, I focused on scheduling and leading our team. The goal wasn't just to make a game, but to bond as a unit before tackling larger studio projects. Coordinating a short sprint is tough, but incredibly rewarding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section class="section" style="padding: 80px 0; background-color: #F4FAFF;">
+      <div class="container">
+        <h3 class="center-align" style="font-family: 'Righteous', cursive; color: #0A192F; margin-bottom: 40px;">The Long Fall</h3>
+        
+        <div class="row">
+          <div class="col s12 m4 center-align">
+            <img src="/assets/img/Pool1.jpg" alt="Falling past obstacles" class="responsive-img screenshot-img materialboxed" data-caption="Navigating the ragdoll character past dangerous obstacles and fire.">
+            <h6 style="font-weight: bold; color: #0A192F; margin-top: 15px;">Obstacle Navigation</h6>
+          </div>
+          
+          <div class="col s12 m4 center-align">
+            <img src="/assets/img/Pool2.jpg" alt="Bouncing off UFO" class="responsive-img screenshot-img materialboxed" data-caption="Bouncing off a UFO platform mid-fall.">
+            <h6 style="font-weight: bold; color: #0A192F; margin-top: 15px;">Dynamic Platforms</h6>
+          </div>
+
+          <div class="col s12 m4 center-align">
+            <img src="/assets/img/Pool3.jpg" alt="Floating in space" class="responsive-img screenshot-img materialboxed" data-caption="Falling from the very top of the atmosphere through space!">
+            <h6 style="font-weight: bold; color: #0A192F; margin-top: 15px;">Space Heights</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <section class="section" style="padding: 60px 0; background-color: #0A192F; border-top: 5px solid #00A8E8; text-align: center;">
+      <div class="container">
+        <h4 class="white-text" style="font-family: 'Righteous', cursive; letter-spacing: 1px; margin-bottom: 20px;">Think you can land it?</h4>
+        <a href="https://steveshack.itch.io/game-jam-2025" target="_blank" class="hoverable" style="display: inline-block; margin-bottom: 40px; font-size: 1.3rem; font-weight: bold; color: #0A192F; background-color: #00A8E8; padding: 12px 40px; border-radius: 30px; text-decoration: none; border: 2px solid #FFFFFF;">
+            <i class="fa fa-gamepad"></i> Play on Itch.io
+        </a>
+        
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 0 auto; max-width: 950px;">
+          <a href="mailto:steveneb0212@gmail.com" target="_blank" class="hoverable" style="background-color: #112A46; color: #00A8E8; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #00A8E8;"><i class="fa fa-envelope"></i> steveneb0212@gmail.com</a>
+          <a href="http://github.com/steveshack" target="_blank" class="hoverable" style="background-color: #112A46; color: #00A8E8; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #00A8E8;"><i class="fa fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/steven-bruns-ab3438266/" target="_blank" class="hoverable" style="background-color: #112A46; color: #00A8E8; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #00A8E8;"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Initialize materialboxed for image expanding
+      $('.materialboxed').materialbox();
+    });
+  </script>
 </body>
 </html>
